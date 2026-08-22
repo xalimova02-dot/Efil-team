@@ -975,7 +975,101 @@ document
         }
 
     });
+<script>
+const glassPages = [
+    "vor-01.jpg",
+    "vor-02.jpg",
+    "vor-03.jpg",
+    "vor-04.jpg",
+    "vor-05.jpg",
+    "vor-06.jpg",
+    "vor-07.jpg",
+    "vor-08.jpg",
+    "vor-09.jpg",
+    "vor-10.jpg",
+    "vor-11.jpg",
+    "vor-12.jpg",
+    "vor-13.jpg",
+    "vor-14.jpg",
+    "vor-15.jpg",
+    "vor-16.jpg",
+    "vor-17.jpg",
+    "vor-18.jpg",
+    "vor-19.jpg",
+    "vor-20.jpg"
+];
 
+let glassPage = 0;
+
+function openGlassReader() {
+    glassPage = 0;
+
+    const reader = document.getElementById("reader");
+
+    reader.innerHTML = `
+        <div class="reader-content">
+            <button class="reader-close" onclick="closeReader()">×</button>
+
+            <div class="reader-counter">
+                Страница <span id="glassPageNumber">1</span> / ${glassPages.length}
+            </div>
+
+            <img
+                id="glassPageImage"
+                src="${glassPages[0]}"
+                alt="Вор и стеклянная принцесса — страница 1"
+            >
+
+            <div class="reader-buttons">
+                <button onclick="previousGlassPage()">← Назад</button>
+                <button onclick="nextGlassPage()">Вперёд →</button>
+            </div>
+        </div>
+    `;
+
+    reader.style.display = "block";
+    document.body.style.overflow = "hidden";
+}
+
+function closeReader() {
+    const reader = document.getElementById("reader");
+
+    if (reader) {
+        reader.style.display = "none";
+    }
+
+    document.body.style.overflow = "";
+}
+
+function showGlassPage() {
+    const image = document.getElementById("glassPageImage");
+    const number = document.getElementById("glassPageNumber");
+
+    if (!image || !number) return;
+
+    image.src = glassPages[glassPage];
+    image.alt =
+        "Вор и стеклянная принцесса — страница " +
+        (glassPage + 1);
+
+    number.textContent = glassPage + 1;
+}
+
+function nextGlassPage() {
+    if (glassPage < glassPages.length - 1) {
+        glassPage++;
+        showGlassPage();
+        window.scrollTo(0, 0);
+    }
+}
+
+function previousGlassPage() {
+    if (glassPage > 0) {
+        glassPage--;
+        showGlassPage();
+        window.scrollTo(0, 0);
+    }
+}
 </script>
 </body>
 </html>
