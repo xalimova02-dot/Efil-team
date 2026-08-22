@@ -711,6 +711,271 @@ function tgLink(url) {
 }
 
 </script>
+<!-- РИДЕР -->
+<div id="reader" class="reader">
 
+    <div class="reader-header">
+        <button onclick="closeReader()">✕</button>
+
+        <span id="readerTitle">
+            Вор и стеклянная принцесса
+        </span>
+
+        <span id="pageNumber">
+            1 / 20
+        </span>
+    </div>
+
+    <div class="reader-content">
+        <img id="readerImage" src="" alt="Страница">
+    </div>
+
+    <div class="reader-controls">
+        <button onclick="previousPage()">←</button>
+
+        <button onclick="nextPage()">→</button>
+    </div>
+
+</div>
+
+
+<style>
+
+/* РИДЕР */
+
+.reader {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    background: #0b0710;
+
+    color: white;
+
+    flex-direction: column;
+}
+
+.reader-header {
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 15px;
+
+    background: #171020;
+
+    border-bottom: 1px solid #3d205b;
+}
+
+.reader-header button {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #762bd4;
+
+    color: white;
+
+    font-size: 22px;
+}
+
+#readerTitle {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+#pageNumber {
+    color: #c9a9e8;
+    font-size: 14px;
+}
+
+.reader-content {
+    flex: 1;
+
+    overflow-y: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    background: #0b0710;
+
+    padding: 10px;
+}
+
+#readerImage {
+    display: block;
+
+    width: 100%;
+    max-width: 720px;
+
+    height: auto;
+
+    object-fit: contain;
+}
+
+.reader-controls {
+    height: 70px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background: #171020;
+
+    border-top: 1px solid #3d205b;
+}
+
+.reader-controls button {
+    width: 45%;
+
+    height: 50px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: linear-gradient(
+        135deg,
+        #762bd4,
+        #963cff
+    );
+
+    color: white;
+
+    font-size: 28px;
+
+    font-weight: bold;
+}
+
+</style>
+
+
+<script>
+
+const glassPages = [];
+
+for (let i = 1; i <= 20; i++) {
+
+    const number = String(i).padStart(2, "0");
+
+    glassPages.push(
+        "vor-" + number + ".jpg"
+    );
+
+}
+
+let currentPage = 0;
+
+
+function openReader(title) {
+
+    if (title === "glass") {
+
+        currentPage = 0;
+
+        document.getElementById("reader").style.display = "flex";
+
+        showPage();
+
+    }
+
+}
+
+
+function closeReader() {
+
+    document.getElementById("reader").style.display = "none";
+
+}
+
+
+function showPage() {
+
+    document.getElementById("readerImage").src =
+        glassPages[currentPage];
+
+    document.getElementById("pageNumber").textContent =
+        (currentPage + 1) + " / " + glassPages.length;
+
+}
+
+
+function nextPage() {
+
+    if (currentPage < glassPages.length - 1) {
+
+        currentPage++;
+
+        showPage();
+
+        document.querySelector(".reader-content").scrollTop = 0;
+
+    }
+
+}
+
+
+function previousPage() {
+
+    if (currentPage > 0) {
+
+        currentPage--;
+
+        showPage();
+
+        document.querySelector(".reader-content").scrollTop = 0;
+
+    }
+
+}
+
+
+/* Свайпы на телефоне */
+
+let touchStartX = 0;
+
+document
+    .getElementById("reader")
+    .addEventListener("touchstart", function(e) {
+
+        touchStartX = e.changedTouches[0].screenX;
+
+    });
+
+
+document
+    .getElementById("reader")
+    .addEventListener("touchend", function(e) {
+
+        const touchEndX =
+            e.changedTouches[0].screenX;
+
+        const difference =
+            touchStartX - touchEndX;
+
+        if (Math.abs(difference) < 50) {
+            return;
+        }
+
+        if (difference > 0) {
+
+            nextPage();
+
+        } else {
+
+            previousPage();
+
+        }
+
+    });
+
+</script>
 </body>
 </html>
