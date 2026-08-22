@@ -1,561 +1,734 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#120d1f">
+<meta charset="UTF-8">
 
-  <title>EFIL TEAM</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+<meta name="theme-color" content="#120d1f">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<title>EFIL TEAM</title>
 
-    html {
-      scroll-behavior: smooth;
-    }
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, Helvetica, Arial, sans-serif;
-      color: #fff;
+<style>
 
-      background:
-        radial-gradient(
-          circle at 50% 0%,
-          #5c28a5 0%,
-          #24123d 35%,
-          #0b0712 75%
-        );
+*{
+    box-sizing:border-box;
+}
 
-      padding: 18px;
-    }
+html{
+    scroll-behavior:smooth;
+}
 
-    .wrap {
-      max-width: 720px;
-      margin: auto;
-    }
+body{
+    margin:0;
+    min-height:100vh;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    color:#fff;
 
-    .hero {
-      overflow: hidden;
-      border-radius: 26px;
-      background: rgba(16, 10, 27, 0.92);
-      border: 1px solid rgba(168, 91, 255, 0.55);
-      box-shadow:
-        0 0 30px rgba(128, 53, 220, 0.35),
-        0 0 80px rgba(92, 40, 165, 0.18);
-    }
+    background:
+    radial-gradient(
+        circle at 50% 0%,
+        #5c28a5 0%,
+        #24123d 35%,
+        #0b0712 75%
+    );
+}
 
-    .hero img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+.wrap{
+    max-width:720px;
+    margin:auto;
+    padding:18px;
+}
 
-    .content {
-      padding: 24px;
-    }
+/* ===== ШАПКА ===== */
 
-    h1 {
-      margin: 0 0 8px;
-      font-size: 32px;
-      letter-spacing: 2px;
-    }
+.hero{
+    overflow:hidden;
+    border-radius:28px;
+    background:rgba(16,10,27,.9);
+    border:1px solid rgba(139,71,218,.7);
+    box-shadow:0 0 25px rgba(120,45,220,.25);
+}
 
-    .sub {
-      margin: 0 0 24px;
-      color: #cbb9dc;
-      font-size: 17px;
-      line-height: 1.5;
-    }
+.hero img{
+    display:block;
+    width:100%;
+    height:auto;
+}
 
-    .buttons {
-      display: grid;
-      gap: 12px;
-    }
+.content{
+    padding:22px;
+}
 
-    button,
-    .main-button {
-      display: block;
-      width: 100%;
-      border: 0;
-      border-radius: 20px;
-      padding: 17px 18px;
+h1{
+    margin:0 0 8px;
+    font-size:30px;
+    letter-spacing:1px;
+}
 
-      background:
-        linear-gradient(
-          135deg,
-          #6c35b7,
-          #3f1665
-        );
+.sub{
+    margin:0 0 22px;
+    color:#cbb9dc;
+    font-size:17px;
+}
 
-      color: #fff;
-      text-align: center;
-      text-decoration: none;
+/* ===== КНОПКИ ===== */
 
-      font-size: 17px;
-      font-weight: 700;
+.buttons{
+    display:grid;
+    gap:12px;
+}
 
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.15),
-        0 5px 15px rgba(0,0,0,.25);
+button,
+.button{
+    display:block;
+    width:100%;
+    border:0;
+    border-radius:18px;
+    padding:16px 18px;
 
-      cursor: pointer;
+    background:
+    linear-gradient(
+        135deg,
+        #6c35b7,
+        #351565
+    );
 
-      transition:
-        transform .15s ease,
-        filter .15s ease;
-    }
+    color:#fff;
+    text-align:center;
+    font-size:17px;
+    font-weight:700;
 
-    button:active,
-    .main-button:active {
-      transform: scale(.98);
-      filter: brightness(.9);
-    }
+    text-decoration:none;
+    cursor:pointer;
 
-    .section {
-      margin-top: 24px;
-      padding: 20px;
-      border-radius: 22px;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+}
 
-      background: rgba(20, 13, 31, .9);
-      border: 1px solid rgba(168, 91, 255, .25);
-    }
+button:active,
+.button:active{
+    transform:scale(.98);
+}
 
-    .section-title {
-      margin: 0 0 16px;
-      font-size: 23px;
-    }
+/* ===== БЛОКИ ===== */
 
-    .title-card {
-      display: flex;
-      gap: 14px;
-      align-items: center;
+.info{
+    margin-top:20px;
+    padding:18px;
+    border-radius:20px;
+    background:rgba(30,25,40,.9);
+    color:#cfc5d8;
+    line-height:1.55;
+}
 
-      margin-bottom: 12px;
-      padding: 12px;
+/* ===== СЕКЦИИ ===== */
 
-      border-radius: 17px;
-      background: rgba(255,255,255,.055);
+.section{
+    margin-top:20px;
+}
 
-      border: 1px solid rgba(255,255,255,.08);
-    }
+.hidden{
+    display:none!important;
+}
 
-    .title-card:last-child {
-      margin-bottom: 0;
-    }
+.section-title{
+    font-size:26px;
+    font-weight:800;
+    margin:0 0 15px;
+}
 
-    .title-cover {
-      width: 78px;
-      height: 105px;
+/* ===== КАРТОЧКИ ТАЙТЛОВ ===== */
 
-      flex-shrink: 0;
+.title-card{
+    display:flex;
+    gap:15px;
+    align-items:center;
 
-      object-fit: cover;
-      border-radius: 12px;
+    padding:14px;
+    margin-bottom:12px;
 
-      background: #241631;
-    }
+    border-radius:22px;
 
-    .title-info {
-      min-width: 0;
-      flex: 1;
-    }
+    background:rgba(30,24,40,.95);
+    border:1px solid rgba(145,80,220,.35);
+}
 
-    .title-name {
-      margin: 0 0 7px;
-      font-size: 17px;
-      font-weight: 700;
-      line-height: 1.3;
-    }
+.title-card img{
+    width:120px;
+    height:160px;
+    object-fit:cover;
+    border-radius:14px;
+    flex-shrink:0;
+}
 
-    .title-type {
-      margin: 0 0 12px;
-      color: #bca8cf;
-      font-size: 14px;
-    }
+.title-info{
+    flex:1;
+}
 
-    .chapter-button {
-      display: inline-block;
-      width: auto;
+.title-name{
+    font-size:20px;
+    font-weight:800;
+    margin-bottom:7px;
+}
 
-      padding: 9px 14px;
-      border-radius: 12px;
+.title-type{
+    color:#bca9ca;
+    margin-bottom:13px;
+    font-size:15px;
+}
 
-      background: #7139bd;
-      color: white;
+.small-button{
+    display:inline-block;
+    width:auto;
+    padding:10px 18px;
+    border-radius:14px;
+    font-size:15px;
+}
 
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 700;
-    }
+/* ===== СТРАНИЦА ТАЙТЛА ===== */
 
-    .info {
-      margin-top: 20px;
-      padding: 17px;
+.back{
+    margin-bottom:15px;
+}
 
-      border-radius: 17px;
+.detail{
+    text-align:center;
+}
 
-      background: rgba(255,255,255,.055);
+.detail img{
+    width:190px;
+    max-width:80%;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
 
-      color: #cfc5d8;
-      line-height: 1.55;
-      font-size: 15px;
-    }
+.detail h2{
+    font-size:27px;
+    margin:18px 0 8px;
+}
 
-    .footer {
-      padding: 25px 10px 10px;
+.detail-meta{
+    color:#bca9ca;
+    margin-bottom:20px;
+}
 
-      text-align: center;
-      color: #8e819b;
-      font-size: 13px;
-    }
+/* ===== ГЛАВЫ ===== */
 
-    .hidden {
-      display: none;
-    }
+.chapter{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-    @media (max-width: 480px) {
+    padding:15px 16px;
+    margin-bottom:10px;
 
-      body {
-        padding: 10px;
-      }
+    border-radius:17px;
 
-      .content {
-        padding: 20px;
-      }
+    background:#211a2d;
+    border:1px solid rgba(145,80,220,.3);
+}
 
-      h1 {
-        font-size: 28px;
-      }
+.chapter-name{
+    font-weight:700;
+}
 
-      .title-cover {
-        width: 70px;
-        height: 95px;
-      }
+.chapter button{
+    width:auto;
+    padding:10px 15px;
+    border-radius:13px;
+    font-size:14px;
+}
 
-      .section {
-        padding: 16px;
-      }
-    }
-  </style>
+/* ===== ЧИТАЛКА ===== */
+
+.reader{
+    margin-top:15px;
+}
+
+.reader img{
+    display:block;
+    width:100%;
+    height:auto;
+    margin:0;
+}
+
+.reader-title{
+    padding:15px;
+    text-align:center;
+    font-weight:700;
+}
+
+/* ===== FOOTER ===== */
+
+.footer{
+    padding:25px 0;
+    text-align:center;
+    color:#8e819b;
+    font-size:13px;
+}
+
+</style>
 </head>
 
 <body>
 
 <main class="wrap">
 
-  <!-- ГЛАВНЫЙ БЛОК -->
+<!-- ================= ГЛАВНАЯ ================= -->
 
-  <section class="hero">
+<section id="home">
 
-    <img
-      src="efil-team.jpg"
-      alt="EFIL TEAM"
-    >
+<section class="hero">
 
-    <div class="content">
+<img src="efil-team.jpg" alt="EFIL TEAM">
 
-      <h1>EFIL TEAM</h1>
+<div class="content">
 
-      <p class="sub">
-        Переводы манги, манхвы и вебтунов
-      </p>
+<h1>EFIL TEAM</h1>
 
-      <div class="buttons">
+<p class="sub">
+Переводы манги, манхвы и вебтунов
+</p>
 
-        <button onclick="showSection('catalog')">
-          📚 Каталог
-        </button>
+<div class="buttons">
 
-        <button onclick="showSection('latest')">
-          ✨ Последние главы
-        </button>
+<button onclick="showSection('catalog')">
+📚 Каталог
+</button>
 
-        <button onclick="openTelegram()">
-          💜 Наш Telegram
-        </button>
+<button onclick="showSection('latest')">
+✨ Последние главы
+</button>
 
-      </div>
+<button onclick="tgLink('https://t.me/Efil_Team')">
+💜 Наш Telegram
+</button>
 
-    </div>
+</div>
 
-  </section>
+<div class="info">
 
+<b>Добро пожаловать в мини-приложение EFIL TEAM!</b>
 
-  <!-- КАТАЛОГ -->
+<br><br>
 
-  <section
-    id="catalog"
-    class="section hidden"
-  >
+Здесь можно найти каталог наших переводов,
+новые главы и информацию о тайтлах.
 
-    <h2 class="section-title">
-      📚 Каталог тайтлов
-    </h2>
+<br><br>
 
+Новые тайтлы и главы будут постепенно
+добавляться в приложение.
 
-    <!-- ТАЙТЛ 1 -->
+</div>
 
-    <div class="title-card">
+</div>
+</section>
 
-      <img
-        class="title-cover"
-        src="efil-team.jpg"
-        alt="Тайтл"
-      >
+</section>
 
-      <div class="title-info">
 
-        <h3 class="title-name">
-          Название тайтла
-        </h3>
+<!-- ================= КАТАЛОГ ================= -->
 
-        <p class="title-type">
-          Манхва • В процессе
-        </p>
+<section id="catalog" class="section hidden">
 
-        <a
-          class="chapter-button"
-          href="#"
-          onclick="openTelegram()"
-        >
-          Читать
-        </a>
+<button class="back" onclick="showSection('home')">
+← Назад
+</button>
 
-      </div>
+<h2 class="section-title">
+📚 Каталог тайтлов
+</h2>
 
-    </div>
 
+<!-- ТАЙТЛ 1 -->
 
-    <!-- ТАЙТЛ 2 -->
+<div class="title-card">
 
-    <div class="title-card">
+<img src="efil-team.jpg" alt="Тайтл">
 
-      <img
-        class="title-cover"
-        src="efil-team.jpg"
-        alt="Тайтл"
-      >
+<div class="title-info">
 
-      <div class="title-info">
+<div class="title-name">
+Вор и стеклянная принцесса
+</div>
 
-        <h3 class="title-name">
-          Название второго тайтла
-        </h3>
+<div class="title-type">
+Манга • Завершён
+</div>
 
-        <p class="title-type">
-          Манхва • Завершено
-        </p>
+<button
+class="small-button"
+onclick="openTitle('thief')">
 
-        <a
-          class="chapter-button"
-          href="#"
-          onclick="openTelegram()"
-        >
-          Читать
-        </a>
+Читать
 
-      </div>
+</button>
 
-    </div>
+</div>
 
+</div>
 
-    <!-- ТАЙТЛ 3 -->
 
-    <div class="title-card">
+<!-- ТАЙТЛ 2 -->
 
-      <img
-        class="title-cover"
-        src="efil-team.jpg"
-        alt="Тайтл"
-      >
+<div class="title-card">
 
-      <div class="title-info">
+<img src="efil-team.jpg" alt="Тайтл">
 
-        <h3 class="title-name">
-          Название третьего тайтла
-        </h3>
+<div class="title-info">
 
-        <p class="title-type">
-          Вебтун • В процессе
-        </p>
+<div class="title-name">
+Следы
+</div>
 
-        <a
-          class="chapter-button"
-          href="#"
-          onclick="openTelegram()"
-        >
-          Читать
-        </a>
+<div class="title-type">
+Комикс • Завершён
+</div>
 
-      </div>
+<button
+class="small-button"
+onclick="openTitle('traces')">
 
-    </div>
+Читать
 
-  </section>
+</button>
 
+</div>
 
-  <!-- ПОСЛЕДНИЕ ГЛАВЫ -->
+</div>
 
-  <section
-    id="latest"
-    class="section hidden"
-  >
 
-    <h2 class="section-title">
-      ✨ Последние главы
-    </h2>
+<!-- ТАЙТЛ 3 -->
 
+<div class="title-card">
 
-    <div class="title-card">
+<img src="efil-team.jpg" alt="Тайтл">
 
-      <img
-        class="title-cover"
-        src="efil-team.jpg"
-        alt="Тайтл"
-      >
+<div class="title-info">
 
-      <div class="title-info">
+<div class="title-name">
+Цзиньчжэ
+</div>
 
-        <h3 class="title-name">
-          Название тайтла
-        </h3>
+<div class="title-type">
+Манхва • Завершён
+</div>
 
-        <p class="title-type">
-          Глава 00 • Новинка
-        </p>
+<button
+class="small-button"
+onclick="openTitle('jingzhe')">
 
-        <a
-          class="chapter-button"
-          href="#"
-          onclick="openTelegram()"
-        >
-          Читать главу
-        </a>
+Читать
 
-      </div>
+</button>
 
-    </div>
+</div>
 
+</div>
 
-    <div class="title-card">
+</section>
 
-      <img
-        class="title-cover"
-        src="efil-team.jpg"
-        alt="Тайтл"
-      >
 
-      <div class="title-info">
+<!-- ================= ПОСЛЕДНИЕ ГЛАВЫ ================= -->
 
-        <h3 class="title-name">
-          Другой тайтл
-        </h3>
+<section id="latest" class="section hidden">
 
-        <p class="title-type">
-          Глава 00 • Новинка
-        </p>
+<button class="back" onclick="showSection('home')">
+← Назад
+</button>
 
-        <a
-          class="chapter-button"
-          href="#"
-          onclick="openTelegram()"
-        >
-          Читать главу
-        </a>
+<h2 class="section-title">
+✨ Последние главы
+</h2>
 
-      </div>
+<div class="info">
 
-    </div>
+Здесь будут отображаться последние
+выпущенные главы наших тайтлов.
 
-  </section>
+</div>
 
+</section>
 
-  <!-- ИНФОРМАЦИЯ -->
 
-  <section class="info">
+<!-- ================= СТРАНИЦА ТАЙТЛА ================= -->
 
-    <strong>Добро пожаловать в мини-приложение EFIL TEAM!</strong>
+<section id="titlePage" class="section hidden">
 
-    <br><br>
+<button class="back" onclick="showSection('catalog')">
+← Каталог
+</button>
 
-    Здесь можно найти каталог наших переводов,
-    последние главы и ссылки на Telegram.
+<div class="detail">
 
-    <br><br>
+<img id="detailImage" src="efil-team.jpg">
 
-    Новые тайтлы и главы будут постепенно добавляться
-    в приложение.
+<h2 id="detailTitle">
+Название
+</h2>
 
-  </section>
+<div class="detail-meta" id="detailMeta">
+Манхва • В процессе
+</div>
 
+</div>
 
-  <div class="footer">
-    EFIL TEAM · Mini App
-  </div>
+<h2 class="section-title">
+📖 Главы
+</h2>
+
+<div id="chapters"></div>
+
+</section>
+
+
+<!-- ================= ЧИТАЛКА ================= -->
+
+<section id="reader" class="section hidden">
+
+<button class="back" onclick="backToTitle()">
+← К тайтлу
+</button>
+
+<div class="reader">
+
+<div class="reader-title" id="readerTitle">
+Глава
+</div>
+
+<!-- СЮДА ПОТОМ ДОБАВИМ СТРАНИЦЫ -->
+
+<div id="readerPages"></div>
+
+</div>
+
+</section>
+
+
+<div class="footer">
+EFIL TEAM • Mini App
+</div>
 
 </main>
 
 
 <script>
 
-  /* Telegram Web App */
+const tg = window.Telegram?.WebApp;
 
-  const tg = window.Telegram?.WebApp;
-
-  if (tg) {
+if(tg){
     tg.ready();
     tg.expand();
-  }
+}
 
 
-  /* Переход в Telegram */
+/* ================= ДАННЫЕ ТАЙТЛОВ ================= */
 
-  function openTelegram() {
+const titles = {
 
-    const url = "https://t.me/Efil_Team";
+    thief:{
+        title:"Вор и стеклянная принцесса",
+        meta:"Манга • Завершён",
+        image:"efil-team.jpg",
 
-    if (tg?.openTelegramLink) {
-      tg.openTelegramLink(url);
-    } else {
-      window.location.href = url;
+        chapters:[
+            {
+                name:"Глава 1",
+                url:"https://mangalib.org/ru/manga/218192--gingeubjaepan-21ho"
+            }
+        ]
+    },
+
+
+    traces:{
+        title:"Следы",
+        meta:"Комикс • Завершён",
+        image:"efil-team.jpg",
+
+        chapters:[
+            {
+                name:"Глава 1",
+                url:"https://mangalib.org/ru/manga/252616--dear-repose"
+            }
+        ]
+    },
+
+
+    jingzhe:{
+        title:"Цзиньчжэ",
+        meta:"Манхва • Завершён",
+        image:"efil-team.jpg",
+
+        chapters:[
+            {
+                name:"Глава 1",
+                url:"#"
+            }
+        ]
     }
 
-  }
+};
 
 
-  /* Переключение разделов */
+/* ================= ПЕРЕКЛЮЧЕНИЕ ================= */
 
-  function showSection(sectionId) {
+function hideAll(){
 
-    const catalog = document.getElementById("catalog");
-    const latest = document.getElementById("latest");
+    document
+    .querySelectorAll(".section, #home")
+    .forEach(el => el.classList.add("hidden"));
 
-    catalog.classList.add("hidden");
-    latest.classList.add("hidden");
+}
 
-    const section = document.getElementById(sectionId);
 
-    if (section) {
-      section.classList.remove("hidden");
+function showSection(id){
 
-      setTimeout(() => {
+    hideAll();
 
-        section.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
+    const section =
+    document.getElementById(id);
+
+    if(section){
+        section.classList.remove("hidden");
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
         });
-
-      }, 50);
     }
 
-  }
+}
+
+
+/* ================= ОТКРЫТЬ ТАЙТЛ ================= */
+
+let currentTitle = null;
+
+function openTitle(id){
+
+    const data = titles[id];
+
+    if(!data) return;
+
+    currentTitle = id;
+
+    document.getElementById("detailTitle").textContent =
+        data.title;
+
+    document.getElementById("detailMeta").textContent =
+        data.meta;
+
+    document.getElementById("detailImage").src =
+        data.image;
+
+
+    const chapters =
+        document.getElementById("chapters");
+
+    chapters.innerHTML = "";
+
+
+    data.chapters.forEach((chapter,index)=>{
+
+        const item =
+        document.createElement("div");
+
+        item.className = "chapter";
+
+        item.innerHTML = `
+
+            <div class="chapter-name">
+                ${chapter.name}
+            </div>
+
+            <button
+                onclick="openChapter(${index})">
+                Читать
+            </button>
+
+        `;
+
+        chapters.appendChild(item);
+
+    });
+
+
+    showSection("titlePage");
+
+}
+
+
+/* ================= ОТКРЫТЬ ГЛАВУ ================= */
+
+function openChapter(index){
+
+    const data = titles[currentTitle];
+
+    if(!data) return;
+
+    const chapter =
+        data.chapters[index];
+
+    if(!chapter) return;
+
+
+    /*
+       ПОКА ГЛАВА ОТКРЫВАЕТ MANGALIB.
+
+       Когда добавим настоящие страницы,
+       здесь будет открываться встроенная
+       читалка внутри Mini App.
+    */
+
+    if(chapter.url && chapter.url !== "#"){
+
+        tgLink(chapter.url);
+
+    }else{
+
+        alert("Глава пока не добавлена.");
+
+    }
+
+}
+
+
+/* ================= НАЗАД ================= */
+
+function backToTitle(){
+
+    showSection("titlePage");
+
+}
+
+
+/* ================= TELEGRAM ================= */
+
+function tgLink(url){
+
+    if(tg?.openTelegramLink){
+
+        if(url.startsWith("https://t.me/")){
+
+            tg.openTelegramLink(url);
+
+        }else{
+
+            window.location.href = url;
+
+        }
+
+    }else{
+
+        window.location.href = url;
+
+    }
+
+}
 
 </script>
 
