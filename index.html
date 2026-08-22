@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="ru">
+
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport"
@@ -14,6 +16,10 @@
 
 <style>
 
+/* =========================
+   ОСНОВНЫЕ НАСТРОЙКИ
+========================= */
+
 * {
     box-sizing: border-box;
 }
@@ -25,6 +31,7 @@ html {
 body {
     margin: 0;
     min-height: 100vh;
+
     font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -45,8 +52,6 @@ body {
         );
 }
 
-/* ОСНОВНОЙ КОНТЕЙНЕР */
-
 .wrap {
     width: 100%;
     max-width: 720px;
@@ -54,7 +59,10 @@ body {
     padding: 18px;
 }
 
-/* ГЛАВНЫЙ БЛОК */
+
+/* =========================
+   ГЛАВНАЯ
+========================= */
 
 .hero {
     overflow: hidden;
@@ -71,6 +79,7 @@ body {
 
 .hero img {
     display: block;
+
     width: 100%;
     height: auto;
 }
@@ -83,6 +92,7 @@ h1 {
     margin: 0 0 8px;
 
     font-size: 30px;
+
     letter-spacing: 1px;
 }
 
@@ -90,18 +100,18 @@ h1 {
     margin: 0 0 22px;
 
     color: #cbb9dc;
+
     font-size: 16px;
 }
 
-/* КНОПКИ */
 
-.buttons {
-    display: grid;
-    gap: 12px;
-}
+/* =========================
+   КНОПКИ
+========================= */
 
 button,
 a.button {
+
     display: block;
 
     width: 100%;
@@ -109,6 +119,7 @@ a.button {
     padding: 15px 18px;
 
     border: 0;
+
     border-radius: 18px;
 
     background:
@@ -123,6 +134,7 @@ a.button {
     text-align: center;
 
     font-size: 16px;
+
     font-weight: 700;
 
     text-decoration: none;
@@ -133,9 +145,19 @@ a.button {
         0 5px 18px rgba(112, 48, 210, .25);
 }
 
-/* СЕКЦИИ */
+.buttons {
+    display: grid;
+
+    gap: 12px;
+}
+
+
+/* =========================
+   РАЗДЕЛЫ
+========================= */
 
 .section {
+
     margin-top: 20px;
 
     padding: 22px;
@@ -152,14 +174,19 @@ a.button {
 }
 
 .section h2 {
+
     margin-top: 0;
 
     font-size: 24px;
 }
 
-/* КАРТОЧКА ТАЙТЛА */
+
+/* =========================
+   КАРТОЧКА ТАЙТЛА
+========================= */
 
 .title-card {
+
     display: flex;
 
     gap: 16px;
@@ -176,7 +203,9 @@ a.button {
 }
 
 .title-card img {
+
     width: 130px;
+
     height: 180px;
 
     object-fit: cover;
@@ -189,81 +218,40 @@ a.button {
 }
 
 .title-info h3 {
+
     margin: 4px 0 8px;
 
     font-size: 20px;
 }
 
 .title-info p {
+
     margin: 0 0 16px;
 
     color: #cbb9dc;
 }
 
-/* ЧИТАЛКА */
 
-.reader {
-    padding: 0;
-
-    background: #050309;
-
-    border-radius: 24px;
-
-    overflow: hidden;
-}
-
-.reader-header {
-    position: sticky;
-
-    top: 0;
-
-    z-index: 10;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding: 12px 14px;
-
-    background: rgba(10, 7, 15, .95);
-
-    backdrop-filter: blur(12px);
-
-    border-bottom: 1px solid rgba(255,255,255,.1);
-}
-
-.reader-header span {
-    font-weight: 700;
-}
-
-.reader-pages {
-    width: 100%;
-}
-
-.reader-pages img {
-    display: block;
-
-    width: 100%;
-    height: auto;
-
-    margin: 0;
-}
-
-/* КНОПКА НАЗАД */
+/* =========================
+   КНОПКА НАЗАД
+========================= */
 
 .back-button {
-    margin-bottom: 14px;
+
+    margin-top: 10px;
 
     background: rgba(255,255,255,.08);
 
     box-shadow: none;
 }
 
-/* ИНФО */
+
+/* =========================
+   ИНФОРМАЦИЯ
+========================= */
 
 .info {
+
     margin-top: 20px;
 
     padding: 16px;
@@ -277,9 +265,190 @@ a.button {
     line-height: 1.5;
 }
 
-/* FOOTER */
+
+/* =========================
+   ЧИТАЛКА
+========================= */
+
+#reader {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    background: #050309;
+
+    color: white;
+
+    flex-direction: column;
+}
+
+
+/* Шапка читалки */
+
+.reader-header {
+
+    flex-shrink: 0;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding:
+        0 12px;
+
+    background: rgba(18, 12, 27, .97);
+
+    border-bottom:
+        1px solid rgba(150,70,255,.35);
+
+    backdrop-filter: blur(12px);
+}
+
+.reader-header button {
+
+    width: 42px;
+
+    height: 42px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c35b7,
+            #8d3df0
+        );
+
+    font-size: 22px;
+
+    box-shadow: none;
+}
+
+#readerTitle {
+
+    flex: 1;
+
+    text-align: center;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+#pageNumber {
+
+    min-width: 55px;
+
+    text-align: right;
+
+    color: #c9a9e8;
+
+    font-size: 14px;
+}
+
+
+/* Область страницы */
+
+.reader-content {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    background: #050309;
+
+    padding: 0;
+}
+
+#readerImage {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 720px;
+
+    height: auto;
+
+    margin: 0;
+
+    object-fit: contain;
+}
+
+
+/* Нижние кнопки */
+
+.reader-controls {
+
+    flex-shrink: 0;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-around;
+
+    gap: 10px;
+
+    padding: 10px;
+
+    background: rgba(18, 12, 27, .97);
+
+    border-top:
+        1px solid rgba(150,70,255,.35);
+}
+
+.reader-controls button {
+
+    width: 45%;
+
+    height: 50px;
+
+    padding: 0;
+
+    border-radius: 15px;
+
+    font-size: 18px;
+
+    box-shadow: none;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 .footer {
+
     padding: 22px;
 
     text-align: center;
@@ -289,7 +458,10 @@ a.button {
     font-size: 13px;
 }
 
-/* МОБИЛЬНАЯ ВЕРСИЯ */
+
+/* =========================
+   МОБИЛЬНАЯ ВЕРСИЯ
+========================= */
 
 @media (max-width: 500px) {
 
@@ -310,29 +482,40 @@ a.button {
     }
 
     .title-card img {
+
         width: 100px;
+
         height: 140px;
     }
 
     .title-info h3 {
+
         font-size: 17px;
     }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
+
 <main class="wrap">
 
-<!-- ГЛАВНАЯ -->
+
+<!-- =========================
+     ГЛАВНАЯ
+========================= -->
 
 <section id="home" class="hero">
 
-    <img src="efil-team.jpg" alt="EFIL TEAM">
+    <img
+        src="efil-team.jpg"
+        alt="EFIL TEAM"
+    >
 
     <div class="content">
 
@@ -352,7 +535,8 @@ a.button {
                 ✨ Последние главы
             </button>
 
-            <button onclick="tgLink('https://t.me/Efil_Team')">
+            <button
+                onclick="tgLink('https://t.me/Efil_Team')">
                 💜 Наш Telegram
             </button>
 
@@ -363,54 +547,44 @@ a.button {
 </section>
 
 
-<!-- КАТАЛОГ -->
 
-<section id="catalog" class="section hidden">
+<!-- =========================
+     КАТАЛОГ
+========================= -->
 
-    <h2>📚 Каталог тайтлов</h2>
+<section
+    id="catalog"
+    class="section hidden">
+
+    <h2>
+        📚 Каталог тайтлов
+    </h2>
 
 
-    <!-- ТАЙТЛ 1 -->
-
-<div class="title-card">
-
-    <img
-        src="vor-i-steklyannaya-princessa.jpg"
-        alt="Вор и стеклянная принцесса"
-    >
-
-    <div class="title-info">
-
-        <h3>Вор и стеклянная принцесса</h3>
-
-        <p>
-            Манга · Завершено
-        </p>
-
-        <button onclick="openReader('glass-princess')">
-            Читать
-        </button>
-
-    </div>
-
-</div>
-
-    <!-- ТАЙТЛ 2 -->
+    <!-- ВОР И СТЕКЛЯННАЯ ПРИНЦЕССА -->
 
     <div class="title-card">
 
-        <img src="efil-team.jpg" alt="Название второго тайтла">
+        <img
+            src="vor-i-steklyannaya-princessa.jpg"
+            alt="Вор и стеклянная принцесса"
+        >
 
         <div class="title-info">
 
-            <h3>Название второго тайтла</h3>
+            <h3>
+                Вор и стеклянная принцесса
+            </h3>
 
             <p>
-                Манхва · Завершено
+                Манга · Завершено
             </p>
 
-            <button onclick="openReader('title2')">
+            <button
+                onclick="openReader('glass')">
+
                 Читать
+
             </button>
 
         </div>
@@ -418,22 +592,61 @@ a.button {
     </div>
 
 
-    <!-- ТАЙТЛ 3 -->
+    <!-- ВТОРОЙ ТАЙТЛ -->
 
     <div class="title-card">
 
-        <img src="efil-team.jpg" alt="Название третьего тайтла">
+        <img
+            src="efil-team.jpg"
+            alt="Название второго тайтла"
+        >
 
         <div class="title-info">
 
-            <h3>Название третьего тайтла</h3>
+            <h3>
+                Название второго тайтла
+            </h3>
+
+            <p>
+                Манхва · Завершено
+            </p>
+
+            <button
+                onclick="showComingSoon()">
+
+                Читать
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ТРЕТИЙ ТАЙТЛ -->
+
+    <div class="title-card">
+
+        <img
+            src="efil-team.jpg"
+            alt="Название третьего тайтла"
+        >
+
+        <div class="title-info">
+
+            <h3>
+                Название третьего тайтла
+            </h3>
 
             <p>
                 Вебтун · В процессе
             </p>
 
-            <button onclick="openReader('title3')">
+            <button
+                onclick="showComingSoon()">
+
                 Читать
+
             </button>
 
         </div>
@@ -452,11 +665,18 @@ a.button {
 </section>
 
 
-<!-- ПОСЛЕДНИЕ ГЛАВЫ -->
 
-<section id="latest" class="section hidden">
+<!-- =========================
+     ПОСЛЕДНИЕ ГЛАВЫ
+========================= -->
 
-    <h2>✨ Последние главы</h2>
+<section
+    id="latest"
+    class="section hidden">
+
+    <h2>
+        ✨ Последние главы
+    </h2>
 
     <div class="info">
 
@@ -476,37 +696,80 @@ a.button {
 </section>
 
 
-<!-- ЧИТАЛКА -->
 
-<section id="reader" class="section hidden">
+<!-- =========================
+     ЧИТАЛКА
+========================= -->
 
-    <div class="reader">
-
-        <div class="reader-header">
-
-            <span id="readerTitle">
-                Глава 1
-            </span>
-
-            <button
-                onclick="closeReader()"
-                style="width:auto;padding:9px 14px;">
-
-                ✕
-
-            </button>
-
-        </div>
+<div id="reader">
 
 
-        <div
-            id="readerPages"
-            class="reader-pages">
-        </div>
+    <div class="reader-header">
+
+
+        <button
+            onclick="closeReader()">
+
+            ✕
+
+        </button>
+
+
+        <span id="readerTitle">
+
+            Вор и стеклянная принцесса
+
+        </span>
+
+
+        <span id="pageNumber">
+
+            1 / 20
+
+        </span>
+
 
     </div>
 
-</section>
+
+
+    <div
+        class="reader-content"
+        id="readerContent">
+
+        <img
+            id="readerImage"
+            src=""
+            alt="Страница">
+
+    </div>
+
+
+
+    <div class="reader-controls">
+
+
+        <button
+            onclick="previousPage()">
+
+            ← Назад
+
+        </button>
+
+
+        <button
+            onclick="nextPage()">
+
+            Вперёд →
+
+        </button>
+
+
+    </div>
+
+
+</div>
+
 
 
 <div class="footer">
@@ -515,12 +778,16 @@ a.button {
 
 </div>
 
+
 </main>
+
 
 
 <script>
 
-/* TELEGRAM */
+/* =========================
+   TELEGRAM
+========================= */
 
 const tg = window.Telegram?.WebApp;
 
@@ -533,7 +800,9 @@ if (tg) {
 }
 
 
-/* ПЕРЕКЛЮЧЕНИЕ РАЗДЕЛОВ */
+/* =========================
+   ПЕРЕКЛЮЧЕНИЕ РАЗДЕЛОВ
+========================= */
 
 function showSection(id) {
 
@@ -564,419 +833,12 @@ function showSection(id) {
 }
 
 
-/* СТРАНИЦЫ ТАЙТЛОВ */
+/* =========================
+   20 СТРАНИЦ
+========================= */
 
-const titles = {
-
-    title1: {
-
-        name: "Название тайтла",
-
-        chapter: "Глава 1",
-
-        pages: [
-
-            "chapters/title1/1.jpg",
-            "chapters/title1/2.jpg",
-            "chapters/title1/3.jpg"
-
-        ]
-
-    },
-
-
-    title2: {
-
-        name: "Название второго тайтла",
-
-        chapter: "Глава 1",
-
-        pages: [
-
-            "chapters/title2/1.jpg",
-            "chapters/title2/2.jpg",
-            "chapters/title2/3.jpg"
-
-        ]
-
-    },
-
-
-    title3: {
-
-        name: "Название третьего тайтла",
-
-        chapter: "Глава 1",
-
-        pages: [
-
-            "chapters/title3/1.jpg",
-            "chapters/title3/2.jpg",
-            "chapters/title3/3.jpg"
-
-        ]
-
-    }
-
-};
-
-
-/* ОТКРЫТЬ ЧИТАЛКУ */
-
-function openReader(id) {
-
-    const title = titles[id];
-
-    if (!title) return;
-
-
-    document.getElementById("catalog")
-        .classList.add("hidden");
-
-
-    document.getElementById("reader")
-        .classList.remove("hidden");
-
-
-    document.getElementById("readerTitle")
-        .textContent =
-        title.name + " · " + title.chapter;
-
-
-    const pages =
-        document.getElementById("readerPages");
-
-
-    pages.innerHTML = "";
-
-
-    title.pages.forEach(page => {
-
-        const img =
-            document.createElement("img");
-
-        img.src = page;
-
-        img.loading = "lazy";
-
-        img.alt = "Страница";
-
-        pages.appendChild(img);
-
-    });
-
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-}
-
-
-/* ЗАКРЫТЬ ЧИТАЛКУ */
-
-function closeReader() {
-
-    document.getElementById("reader")
-        .classList.add("hidden");
-
-
-    document.getElementById("catalog")
-        .classList.remove("hidden");
-
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-}
-
-
-/* TELEGRAM ССЫЛКИ */
-
-function tgLink(url) {
-
-    if (tg?.openTelegramLink) {
-
-        tg.openTelegramLink(url);
-
-    } else {
-
-        location.href = url;
-
-    }
-
-}
-
-</script>
-<!-- РИДЕР -->
-<div id="reader" class="reader">
-
-    <div class="reader-header">
-        <button onclick="closeReader()">✕</button>
-
-        <span id="readerTitle">
-            Вор и стеклянная принцесса
-        </span>
-
-        <span id="pageNumber">
-            1 / 20
-        </span>
-    </div>
-
-    <div class="reader-content">
-        <img id="readerImage" src="" alt="Страница">
-    </div>
-
-    <div class="reader-controls">
-        <button onclick="previousPage()">←</button>
-
-        <button onclick="nextPage()">→</button>
-    </div>
-
-</div>
-
-
-<style>
-
-/* РИДЕР */
-
-.reader {
-    display: none;
-
-    position: fixed;
-    inset: 0;
-
-    z-index: 9999;
-
-    background: #0b0710;
-
-    color: white;
-
-    flex-direction: column;
-}
-
-.reader-header {
-    height: 60px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 15px;
-
-    background: #171020;
-
-    border-bottom: 1px solid #3d205b;
-}
-
-.reader-header button {
-    width: 42px;
-    height: 42px;
-
-    border: none;
-    border-radius: 50%;
-
-    background: #762bd4;
-
-    color: white;
-
-    font-size: 22px;
-}
-
-#readerTitle {
-    font-weight: 700;
-    font-size: 16px;
-}
-
-#pageNumber {
-    color: #c9a9e8;
-    font-size: 14px;
-}
-
-.reader-content {
-    flex: 1;
-
-    overflow-y: auto;
-
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
-    background: #0b0710;
-
-    padding: 10px;
-}
-
-#readerImage {
-    display: block;
-
-    width: 100%;
-    max-width: 720px;
-
-    height: auto;
-
-    object-fit: contain;
-}
-
-.reader-controls {
-    height: 70px;
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    background: #171020;
-
-    border-top: 1px solid #3d205b;
-}
-
-.reader-controls button {
-    width: 45%;
-
-    height: 50px;
-
-    border: none;
-    border-radius: 15px;
-
-    background: linear-gradient(
-        135deg,
-        #762bd4,
-        #963cff
-    );
-
-    color: white;
-
-    font-size: 28px;
-
-    font-weight: bold;
-}
-
-</style>
-
-
-<script>
-
-const glassPages = [];
-
-for (let i = 1; i <= 20; i++) {
-
-    const number = String(i).padStart(2, "0");
-
-    glassPages.push(
-        "vor-" + number + ".jpg"
-    );
-
-}
-
-let currentPage = 0;
-
-
-function openReader(title) {
-
-    if (title === "glass") {
-
-        currentPage = 0;
-
-        document.getElementById("reader").style.display = "flex";
-
-        showPage();
-
-    }
-
-}
-
-
-function closeReader() {
-
-    document.getElementById("reader").style.display = "none";
-
-}
-
-
-function showPage() {
-
-    document.getElementById("readerImage").src =
-        glassPages[currentPage];
-
-    document.getElementById("pageNumber").textContent =
-        (currentPage + 1) + " / " + glassPages.length;
-
-}
-
-
-function nextPage() {
-
-    if (currentPage < glassPages.length - 1) {
-
-        currentPage++;
-
-        showPage();
-
-        document.querySelector(".reader-content").scrollTop = 0;
-
-    }
-
-}
-
-
-function previousPage() {
-
-    if (currentPage > 0) {
-
-        currentPage--;
-
-        showPage();
-
-        document.querySelector(".reader-content").scrollTop = 0;
-
-    }
-
-}
-
-
-/* Свайпы на телефоне */
-
-let touchStartX = 0;
-
-document
-    .getElementById("reader")
-    .addEventListener("touchstart", function(e) {
-
-        touchStartX = e.changedTouches[0].screenX;
-
-    });
-
-
-document
-    .getElementById("reader")
-    .addEventListener("touchend", function(e) {
-
-        const touchEndX =
-            e.changedTouches[0].screenX;
-
-        const difference =
-            touchStartX - touchEndX;
-
-        if (Math.abs(difference) < 50) {
-            return;
-        }
-
-        if (difference > 0) {
-
-            nextPage();
-
-        } else {
-
-            previousPage();
-
-        }
-
-    });
-<script>
 const glassPages = [
+
     "vor-01.jpg",
     "vor-02.jpg",
     "vor-03.jpg",
@@ -997,79 +859,264 @@ const glassPages = [
     "vor-18.jpg",
     "vor-19.jpg",
     "vor-20.jpg"
+
 ];
 
-let glassPage = 0;
 
-function openGlassReader() {
-    glassPage = 0;
+/* =========================
+   ТЕКУЩАЯ СТРАНИЦА
+========================= */
 
-    const reader = document.getElementById("reader");
+let currentPage = 0;
 
-    reader.innerHTML = `
-        <div class="reader-content">
-            <button class="reader-close" onclick="closeReader()">×</button>
 
-            <div class="reader-counter">
-                Страница <span id="glassPageNumber">1</span> / ${glassPages.length}
-            </div>
+/* =========================
+   ОТКРЫТЬ ЧИТАЛКУ
+========================= */
 
-            <img
-                id="glassPageImage"
-                src="${glassPages[0]}"
-                alt="Вор и стеклянная принцесса — страница 1"
-            >
+function openReader(title) {
 
-            <div class="reader-buttons">
-                <button onclick="previousGlassPage()">← Назад</button>
-                <button onclick="nextGlassPage()">Вперёд →</button>
-            </div>
-        </div>
-    `;
-
-    reader.style.display = "block";
-    document.body.style.overflow = "hidden";
-}
-
-function closeReader() {
-    const reader = document.getElementById("reader");
-
-    if (reader) {
-        reader.style.display = "none";
+    if (title !== "glass") {
+        return;
     }
 
-    document.body.style.overflow = "";
+
+    currentPage = 0;
+
+
+    const reader =
+        document.getElementById("reader");
+
+
+    reader.style.display = "flex";
+
+
+    document.body.style.overflow = "hidden";
+
+
+    document.getElementById("readerTitle")
+        .textContent =
+        "Вор и стеклянная принцесса";
+
+
+    showPage();
+
 }
 
-function showGlassPage() {
-    const image = document.getElementById("glassPageImage");
-    const number = document.getElementById("glassPageNumber");
 
-    if (!image || !number) return;
+/* =========================
+   ПОКАЗАТЬ СТРАНИЦУ
+========================= */
 
-    image.src = glassPages[glassPage];
+function showPage() {
+
+    const image =
+        document.getElementById("readerImage");
+
+
+    const number =
+        document.getElementById("pageNumber");
+
+
+    image.src =
+        glassPages[currentPage];
+
+
     image.alt =
         "Вор и стеклянная принцесса — страница " +
-        (glassPage + 1);
+        (currentPage + 1);
 
-    number.textContent = glassPage + 1;
+
+    number.textContent =
+        (currentPage + 1) +
+        " / " +
+        glassPages.length;
+
+
+    document
+        .getElementById("readerContent")
+        .scrollTop = 0;
+
 }
 
-function nextGlassPage() {
-    if (glassPage < glassPages.length - 1) {
-        glassPage++;
-        showGlassPage();
-        window.scrollTo(0, 0);
+
+/* =========================
+   СЛЕДУЮЩАЯ СТРАНИЦА
+========================= */
+
+function nextPage() {
+
+    if (
+        currentPage <
+        glassPages.length - 1
+    ) {
+
+        currentPage++;
+
+        showPage();
+
     }
+
 }
 
-function previousGlassPage() {
-    if (glassPage > 0) {
-        glassPage--;
-        showGlassPage();
-        window.scrollTo(0, 0);
+
+/* =========================
+   ПРЕДЫДУЩАЯ СТРАНИЦА
+========================= */
+
+function previousPage() {
+
+    if (currentPage > 0) {
+
+        currentPage--;
+
+        showPage();
+
     }
+
 }
+
+
+/* =========================
+   ЗАКРЫТЬ ЧИТАЛКУ
+========================= */
+
+function closeReader() {
+
+    document
+        .getElementById("reader")
+        .style.display = "none";
+
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* =========================
+   СВАЙПЫ
+========================= */
+
+let touchStartX = 0;
+
+let touchStartY = 0;
+
+
+const reader =
+    document.getElementById("reader");
+
+
+reader.addEventListener(
+    "touchstart",
+    function(e) {
+
+        touchStartX =
+            e.changedTouches[0].screenX;
+
+        touchStartY =
+            e.changedTouches[0].screenY;
+
+    },
+    { passive: true }
+);
+
+
+reader.addEventListener(
+    "touchend",
+    function(e) {
+
+        const touchEndX =
+            e.changedTouches[0].screenX;
+
+        const touchEndY =
+            e.changedTouches[0].screenY;
+
+
+        const differenceX =
+            touchStartX - touchEndX;
+
+
+        const differenceY =
+            touchStartY - touchEndY;
+
+
+        /*
+         * Если движение в основном вертикальное,
+         * ничего не делаем.
+         */
+
+        if (
+            Math.abs(differenceX) <
+            Math.abs(differenceY)
+        ) {
+
+            return;
+
+        }
+
+
+        /*
+         * Слишком маленький свайп
+         */
+
+        if (
+            Math.abs(differenceX) < 50
+        ) {
+
+            return;
+
+        }
+
+
+        if (differenceX > 0) {
+
+            nextPage();
+
+        } else {
+
+            previousPage();
+
+        }
+
+    },
+    { passive: true }
+);
+
+
+/* =========================
+   TELEGRAM
+========================= */
+
+function tgLink(url) {
+
+    if (tg?.openTelegramLink) {
+
+        tg.openTelegramLink(url);
+
+    } else {
+
+        window.location.href = url;
+
+    }
+
+}
+
+
+/* =========================
+   ЗАГЛУШКА ДЛЯ ДРУГИХ ТАЙТЛОВ
+========================= */
+
+function showComingSoon() {
+
+    alert(
+        "Читалка для этого тайтла пока не добавлена."
+    );
+
+}
+
 </script>
+
+
 </body>
+
 </html>
