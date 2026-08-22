@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#120d1f">
+  <title>EFIL TEAM</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0; min-height:100vh; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:#fff; background:
+      radial-gradient(circle at 50% 0%,#5c28a5 0%,#24133f 30%,#0d0915 72%);
+    }
+    .wrap{max-width:720px;margin:auto;padding:18px 16px 30px}
+    .hero{position:relative;overflow:hidden;border:1px solid #7446a5;border-radius:24px;
+      background:rgba(16,10,27,.78);box-shadow:0 12px 45px rgba(0,0,0,.45)}
+    .hero img{display:block;width:100%;height:auto}
+    .content{padding:22px}
+    h1{margin:0 0 8px;font-size:30px;letter-spacing:2px}
+    .sub{margin:0 0 22px;color:#cbb9dc}
+    .buttons{display:grid;gap:12px}
+    button,a{
+      display:block;width:100%;padding:15px 18px;border-radius:15px;border:1px solid #7544a7;
+      background:linear-gradient(135deg,#6c35b7,#35165d);color:white;text-decoration:none;
+      text-align:center;font-size:16px;font-weight:700
+    }
+    .info{margin-top:20px;padding:16px;border-radius:16px;background:rgba(255,255,255,.06);
+      color:#cfc5d8;line-height:1.5}
+    .footer{text-align:center;color:#8e819b;font-size:12px;margin-top:18px}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <img src="efil-team.jpg" alt="EFIL TEAM">
+      <div class="content">
+        <h1>EFIL TEAM</h1>
+        <p class="sub">Переводы манги, манхвы и вебтунов</p>
+        <div class="buttons">
+          <a href="#" onclick="tgLink('https://t.me/');return false;">📚 Каталог</a>
+          <a href="#" onclick="tgLink('https://t.me/');return false;">✨ Последние главы</a>
+          <a href="#" onclick="tgLink('https://t.me/');return false;">💜 Наш Telegram</a>
+        </div>
+        <div class="info">Добро пожаловать в мини-приложение EFIL TEAM. Здесь можно разместить каталог тайтлов, новости команды и ссылки на новые главы.</div>
+      </div>
+    </section>
+    <div class="footer">EFIL TEAM · Mini App</div>
+  </main>
+<script>
+  const tg = window.Telegram?.WebApp;
+  if (tg) { tg.ready(); tg.expand(); }
+  function tgLink(url) {
+    if (tg?.openTelegramLink) tg.openTelegramLink(url);
+    else location.href = url;
+  }
+</script>
+</body>
+</html>
