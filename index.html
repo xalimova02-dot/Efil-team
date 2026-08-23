@@ -1081,6 +1081,82 @@ function showComingSoon() {
 }
 
 </script>
+<script>
 
+const rockteaPages = [
+    "1.JPG",
+    "2.JPG",
+    "3.JPG",
+    "4.JPG",
+    "5.JPG",
+    "6.JPG",
+    "7.JPG",
+    "8.JPG",
+    "9.JPG",
+    "10.JPG",
+    "11.JPG",
+    "12.JPG"
+];
+
+let rockteaPage = 0;
+
+function openRockteaReader() {
+
+    rockteaPage = 0;
+
+    const reader = document.getElementById("reader");
+
+    reader.style.display = "flex";
+
+    document.getElementById("readerTitle").textContent =
+        "Rocktea · Глава 3";
+
+    showRockteaPage();
+
+    document.body.style.overflow = "hidden";
+}
+
+function showRockteaPage() {
+
+    const image = document.getElementById("readerImage");
+    const number = document.getElementById("pageNumber");
+
+    image.src = rockteaPages[rockteaPage];
+
+    image.alt =
+        "Rocktea — глава 3 — страница " +
+        (rockteaPage + 1);
+
+    number.textContent =
+        (rockteaPage + 1) +
+        " / " +
+        rockteaPages.length;
+}
+
+function nextRockteaPage() {
+
+    if (rockteaPage < rockteaPages.length - 1) {
+
+        rockteaPage++;
+
+        showRockteaPage();
+
+        document.querySelector(".reader-content").scrollTop = 0;
+    }
+}
+
+function previousRockteaPage() {
+
+    if (rockteaPage > 0) {
+
+        rockteaPage--;
+
+        showRockteaPage();
+
+        document.querySelector(".reader-content").scrollTop = 0;
+    }
+}
+
+</script>
 </body>
 </html>
