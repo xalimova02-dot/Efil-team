@@ -2,388 +2,1018 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<meta name="theme-color" content="#120d1c">
 
 <title>Каталог манхвы</title>
 
 <style>
+
+/* =====================================================
+   ОСНОВА
+===================================================== */
+
 * {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    background: #0f0f12;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            #30213f 0%,
+            #18131f 35%,
+            #0d0b11 75%
+        );
+
+    color: #fff;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
 }
 
+
+/* =====================================================
+   ШАПКА
+===================================================== */
+
 header {
-    padding: 25px 20px;
+    position: relative;
+
+    padding:
+        calc(28px + env(safe-area-inset-top))
+        20px
+        28px;
+
     text-align: center;
-    background: #17171c;
-    border-bottom: 1px solid #292930;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(38, 27, 50, 0.98),
+            rgba(23, 18, 29, 0.96)
+        );
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.25);
 }
 
 header h1 {
     margin: 0;
-    font-size: 28px;
+
+    font-size: 30px;
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
 }
+
+
+/* =====================================================
+   КАТАЛОГ
+===================================================== */
 
 .catalog {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-    gap: 18px;
-    padding: 25px;
+    width: 100%;
     max-width: 1200px;
-    margin: auto;
+
+    margin: 0 auto;
+
+    padding:
+        28px
+        22px
+        calc(50px + env(safe-area-inset-bottom));
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(190px, 1fr));
+
+    gap: 22px;
 }
 
+
+/* =====================================================
+   КАРТОЧКА ТАЙТЛА
+===================================================== */
+
 .title-card {
-    background: #19191f;
-    border-radius: 14px;
+
+    position: relative;
+
     overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #211a28,
+            #17131b
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 18px;
+
     cursor: pointer;
-    transition: 0.2s;
-    border: 1px solid #292930;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.30);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
 }
 
 .title-card:hover {
-    transform: translateY(-4px);
-    border-color: #55555f;
+
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(218,170,76,0.45);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.45);
 }
+
+.title-card:active {
+    transform: scale(0.98);
+}
+
+
+/* =====================================================
+   ОБЛОЖКА КАРТОЧКИ
+===================================================== */
 
 .title-card img {
+
     width: 100%;
+
     aspect-ratio: 2 / 3;
-    object-fit: cover;
+
     display: block;
-    background: #222;
+
+    object-fit: cover;
+
+    background: #211b26;
+
+    transition:
+        transform 0.3s ease;
 }
 
+.title-card:hover img {
+    transform: scale(1.025);
+}
+
+
+/* =====================================================
+   НАЗВАНИЕ
+===================================================== */
+
 .title-info {
-    padding: 13px;
+
+    padding:
+        15px
+        15px
+        17px;
 }
 
 .title-info h2 {
+
     margin: 0;
+
     font-size: 17px;
-    line-height: 1.3;
+
+    line-height: 1.35;
+
+    font-weight: 700;
+
+    color: #fff;
 }
+
+
+/* =====================================================
+   СКРЫТИЕ
+===================================================== */
 
 .hidden {
     display: none !important;
 }
 
-/* СТРАНИЦА ТАЙТЛА */
+
+/* =====================================================
+   СТРАНИЦА ТАЙТЛА
+===================================================== */
 
 .title-page {
+
+    width: 100%;
     max-width: 850px;
-    margin: auto;
-    padding: 25px 18px 50px;
+
+    margin: 0 auto;
+
+    padding:
+        24px
+        18px
+        calc(60px + env(safe-area-inset-bottom));
 }
+
+
+/* =====================================================
+   КНОПКА НАЗАД
+===================================================== */
 
 .back-button {
-    border: none;
-    background: #292930;
-    color: white;
-    padding: 11px 18px;
-    border-radius: 10px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    background:
+        rgba(255,255,255,0.07);
+
+    color: #fff;
+
+    padding:
+        11px
+        17px;
+
+    border-radius: 12px;
+
     cursor: pointer;
+
     margin-bottom: 25px;
+
     font-size: 15px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease;
 }
 
+.back-button:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+.back-button:active {
+    transform: scale(0.96);
+}
+
+
+/* =====================================================
+   ИНФОРМАЦИЯ О ТАЙТЛЕ
+===================================================== */
+
 .title-header {
+
     display: flex;
+
+    align-items: flex-start;
+
     gap: 20px;
+
     margin-bottom: 30px;
+
+    padding-bottom: 25px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.08);
 }
 
 .title-header img {
-    width: 150px;
-    height: 220px;
+
+    flex-shrink: 0;
+
+    width: 145px;
+    height: 215px;
+
     object-fit: cover;
-    border-radius: 12px;
-    background: #222;
+
+    border-radius: 15px;
+
+    background: #211b26;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.4);
+
+    border:
+        1px solid rgba(255,255,255,0.08);
 }
 
 .title-header h1 {
-    margin-top: 0;
-    font-size: 25px;
+
+    margin: 4px 0 0;
+
+    font-size: 26px;
+
+    line-height: 1.25;
+
+    font-weight: 800;
 }
 
+
+/* =====================================================
+   СПИСОК ГЛАВ
+===================================================== */
+
 .chapter-list {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 12px;
 }
 
+
+/* =====================================================
+   ОДНА ГЛАВА
+===================================================== */
+
 .chapter-item {
-    background: #19191f;
-    border: 1px solid #292930;
-    border-radius: 12px;
+
     overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #211b27,
+            #18141d
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,0.18);
 }
 
+
+/* =====================================================
+   КНОПКА ГЛАВЫ
+===================================================== */
+
 .chapter-button {
+
     width: 100%;
-    padding: 17px;
+
+    padding:
+        17px
+        18px;
+
     background: transparent;
-    color: white;
+
+    color: #fff;
+
     border: none;
+
     text-align: left;
+
     font-size: 18px;
+
+    font-weight: 650;
+
     cursor: pointer;
+
+    transition:
+        background 0.2s ease;
 }
 
 .chapter-button:hover {
-    background: #222229;
+    background: rgba(255,255,255,0.05);
 }
 
+.chapter-button:active {
+    background: rgba(255,255,255,0.08);
+}
+
+
+/* =====================================================
+   ДОНАТ ПОД КАЖДОЙ ГЛАВОЙ
+===================================================== */
+
 .donate-button {
+
     display: block;
-    margin: 0 14px 14px;
-    padding: 12px;
+
+    width: calc(100% - 28px);
+
+    margin:
+        0
+        14px
+        14px;
+
+    padding:
+        12px
+        15px;
+
     text-align: center;
-    background: #d6a43b;
-    color: #111;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e4b84d,
+            #c9962e
+        );
+
+    color: #17120a;
+
     text-decoration: none;
-    border-radius: 9px;
-    font-weight: bold;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-weight: 750;
+
+    font-size: 14px;
+
     cursor: pointer;
+
+    box-shadow:
+        0 5px 14px rgba(190,145,45,0.18);
+
+    transition:
+        transform 0.15s ease,
+        filter 0.15s ease;
 }
 
 .donate-button:hover {
-    background: #e6b64c;
+    filter: brightness(1.08);
 }
 
-/* ЧИТАЛКА */
+.donate-button:active {
+    transform: scale(0.98);
+}
+
+
+/* =====================================================
+   ЧИТАЛКА
+===================================================== */
 
 .reader {
+
+    width: 100%;
+
     max-width: 900px;
-    margin: auto;
-    padding: 15px 10px 50px;
+
+    margin: 0 auto;
+
+    padding:
+        18px
+        10px
+        calc(70px + env(safe-area-inset-bottom));
 }
 
+
+/* =====================================================
+   ВЕРХ ЧИТАЛКИ
+===================================================== */
+
 .reader-top {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 15px;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+.reader-top .back-button {
+    margin-bottom: 0;
 }
 
 .reader-top h2 {
+
     margin: 0;
-    font-size: 20px;
+
+    font-size: 18px;
+
+    line-height: 1.3;
+
+    text-align: right;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   СТРАНИЦЫ МАНХВЫ
+===================================================== */
+
+#readerPages {
+
+    width: 100%;
+
+    background: #080709;
 }
 
 .reader-page {
+
     width: 100%;
+
+    height: auto;
+
     display: block;
+
     margin: 0 auto;
-    background: #111;
+
+    background: #080709;
 }
 
-.reader-controls {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 20px 0;
+
+/* =====================================================
+   ОШИБКА СТРАНИЦЫ
+===================================================== */
+
+.reader-error {
+
+    padding: 30px 15px;
+
+    margin: 10px 0;
+
+    text-align: center;
+
+    background: #21151b;
+
+    color: #ff7777;
+
+    border-radius: 10px;
 }
 
-.reader-controls button {
-    border: none;
-    background: #292930;
-    color: white;
-    padding: 11px 18px;
-    border-radius: 9px;
-    cursor: pointer;
-}
+
+/* =====================================================
+   ДОНАТ В ЧИТАЛКЕ
+===================================================== */
 
 .reader-donate {
-    margin-top: 25px;
+
+    margin-top: 30px;
+
+    padding:
+        20px
+        15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #211b27,
+            #17131b
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 15px;
 }
 
+
+/* =====================================================
+   БЛОК КОПИРОВАНИЯ
+===================================================== */
+
 .copy-box {
-    margin-top: 12px;
-    padding: 15px;
-    background: #19191f;
-    border-radius: 10px;
+
+    margin-top: 13px;
+
+    padding: 17px;
+
+    background:
+        rgba(255,255,255,0.045);
+
+    border-radius: 11px;
+
     text-align: center;
+
+    border:
+        1px solid rgba(255,255,255,0.06);
 }
 
 .copy-number {
+
     font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
+
+    line-height: 1.5;
+
+    font-weight: 750;
+
+    margin-bottom: 12px;
 }
 
 .copy-button {
-    border: none;
-    background: #3b3b45;
+
+    border:
+        1px solid rgba(255,255,255,0.10);
+
+    background:
+        rgba(255,255,255,0.08);
+
     color: white;
-    padding: 10px 16px;
-    border-radius: 8px;
+
+    padding:
+        10px
+        17px;
+
+    border-radius: 9px;
+
     cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease;
 }
+
+.copy-button:hover {
+    background:
+        rgba(255,255,255,0.13);
+}
+
+
+/* =====================================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+===================================================== */
 
 @media (max-width: 600px) {
 
-    .catalog {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 15px;
-        gap: 12px;
+    header {
+        padding:
+            calc(25px + env(safe-area-inset-top))
+            16px
+            25px;
     }
+
+    header h1 {
+        font-size: 27px;
+    }
+
+
+    .catalog {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 13px;
+
+        padding:
+            18px
+            14px
+            calc(40px + env(safe-area-inset-bottom));
+    }
+
+
+    .title-card {
+        border-radius: 15px;
+    }
+
+
+    .title-info {
+        padding:
+            12px
+            11px
+            14px;
+    }
+
+
+    .title-info h2 {
+        font-size: 15px;
+    }
+
+
+    .title-page {
+
+        padding:
+            18px
+            14px
+            calc(50px + env(safe-area-inset-bottom));
+    }
+
+
+    .title-header {
+
+        gap: 14px;
+
+        margin-bottom: 22px;
+
+        padding-bottom: 20px;
+    }
+
 
     .title-header img {
-        width: 110px;
-        height: 165px;
+
+        width: 105px;
+        height: 158px;
+
+        border-radius: 12px;
     }
+
 
     .title-header h1 {
+
         font-size: 20px;
+
+        line-height: 1.3;
     }
 
+
+    .chapter-list {
+        gap: 10px;
+    }
+
+
+    .chapter-button {
+
+        padding:
+            16px;
+
+        font-size: 17px;
+    }
+
+
+    .donate-button {
+
+        width: calc(100% - 22px);
+
+        margin:
+            0
+            11px
+            11px;
+
+        padding: 11px;
+    }
+
+
     .reader {
+
         padding-left: 0;
         padding-right: 0;
     }
 
+
     .reader-top {
-        padding: 0 10px;
+
+        padding:
+            0
+            10px;
+
+        align-items: flex-start;
     }
+
+
+    .reader-top h2 {
+
+        font-size: 15px;
+
+        max-width: 55%;
+    }
+
+
+    .reader-donate {
+
+        margin:
+            25px
+            12px
+            0;
+
+        border-radius: 14px;
+    }
+
 }
+
+
+/* =====================================================
+   СОВСЕМ МАЛЕНЬКИЕ ЭКРАНЫ
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .title-header img {
+
+        width: 92px;
+        height: 138px;
+    }
+
+    .title-header h1 {
+        font-size: 18px;
+    }
+
+    .title-info h2 {
+        font-size: 14px;
+    }
+
+}
+
 </style>
 </head>
 
+
 <body>
 
+
+<!-- =====================================================
+     ШАПКА
+===================================================== -->
+
 <header>
+
     <h1>Каталог манхвы</h1>
+
 </header>
 
 
-<!-- ========================= -->
-<!-- КАТАЛОГ -->
-<!-- ========================= -->
+<!-- =====================================================
+     КАТАЛОГ
+===================================================== -->
 
 <section id="catalog" class="catalog">
+
 
     <div class="title-card"
          onclick="openTitle('happy')">
 
         <img
             src="Final.JPG"
-            onerror="this.onerror=null; this.src='Final_92_1.jpg';"
-            alt="Счастливый финал для умирающей злодейки">
+            alt="Счастливый финал для умирающей злодейки"
+            onerror="this.onerror=null; this.src='Final_92_1.jpg';">
 
         <div class="title-info">
-            <h2>Счастливый финал для умирающей злодейки</h2>
+
+            <h2>
+                Счастливый финал для умирающей злодейки
+            </h2>
+
         </div>
 
     </div>
 
+
     <!--
-    СЮДА ПОЗЖЕ МОЖНО ДОБАВЛЯТЬ ДРУГИЕ ТАЙТЛЫ.
+    ================================================
+    БУДУЩИЕ ТАЙТЛЫ
 
     Например:
 
     <div class="title-card"
          onclick="openTitle('vor')">
 
-        <img src="vor.jpg" alt="Вор и стеклянная принцесса">
+        <img src="vor.jpg">
 
         <div class="title-info">
             <h2>Вор и стеклянная принцесса</h2>
         </div>
 
     </div>
+
+    ================================================
     -->
+
 
 </section>
 
 
-<!-- ========================= -->
-<!-- СПИСОК ГЛАВ -->
-<!-- ========================= -->
 
-<section id="titlePage" class="title-page hidden">
+<!-- =====================================================
+     СТРАНИЦА ТАЙТЛА
+===================================================== -->
 
-    <button class="back-button" onclick="backToCatalog()">
+<section id="titlePage"
+         class="title-page hidden">
+
+
+    <button
+        class="back-button"
+        onclick="backToCatalog()">
+
         ← Назад к каталогу
+
     </button>
 
+
     <div class="title-header">
+
 
         <img
             id="titleCover"
             src="Final.JPG"
-            onerror="this.onerror=null; this.src='Final_92_1.jpg';"
-            alt="Обложка">
+            alt="Обложка"
+            onerror="this.onerror=null; this.src='Final_92_1.jpg';">
+
 
         <div>
+
             <h1 id="titleName">
                 Счастливый финал для умирающей злодейки
             </h1>
+
         </div>
+
 
     </div>
 
-    <div id="chapterList" class="chapter-list"></div>
+
+    <div
+        id="chapterList"
+        class="chapter-list">
+    </div>
+
 
 </section>
 
 
-<!-- ========================= -->
-<!-- ЧИТАЛКА -->
-<!-- ========================= -->
 
-<section id="reader" class="reader hidden">
+<!-- =====================================================
+     ЧИТАЛКА
+===================================================== -->
+
+<section id="reader"
+         class="reader hidden">
+
 
     <div class="reader-top">
 
-        <button class="back-button" onclick="backToChapters()">
+
+        <button
+            class="back-button"
+            onclick="backToChapters()">
+
             ← К главам
+
         </button>
+
 
         <h2 id="readerTitle"></h2>
 
+
     </div>
 
+
     <div id="readerPages"></div>
+
 
     <div class="reader-donate">
 
         <a
+            id="readerDonate"
             class="donate-button"
-            href="tel:+79635956661">
+            href="#">
+
             Поддержать команду
+
         </a>
+
 
         <div class="copy-box">
 
-            <div class="copy-number">
-                Т-Банк
-                <br>
-                +7 963 595-66-61
+            <div
+                id="copyNumberText"
+                class="copy-number">
             </div>
+
 
             <button
                 class="copy-button"
                 onclick="copyNumber()">
+
                 Скопировать номер
+
             </button>
 
         </div>
 
     </div>
 
+
 </section>
 
 
+
 <script>
+
 
 /* =====================================================
    ДАННЫЕ ТАЙТЛОВ
@@ -391,25 +1021,30 @@ header h1 {
 
 const titles = {
 
+
     happy: {
 
-        name: "Счастливый финал для умирающей злодейки",
+        name:
+            "Счастливый финал для умирающей злодейки",
 
-        /*
-         * Обложка.
-         * Сначала пытаемся загрузить Final.JPG.
-         * Если её нет — Final.JPG.
-         * Если и её нет — первая страница главы 92.
-         */
 
-        cover: "Final.JPG",
+        cover:
+            "Final.JPG",
+
 
         donation: {
-            bank: "Т-Банк",
-            phone: "+79635956661"
+
+            bank:
+                "Т-Банк",
+
+            phone:
+                "+79635956661"
+
         },
 
+
         chapters: {
+
 
             92: [
                 "Final_92_1.jpg",
@@ -421,6 +1056,7 @@ const titles = {
                 "Final_92_7.jpg"
             ],
 
+
             93: [
                 "Final_93_1.jpg",
                 "Final_93_2.jpg",
@@ -430,6 +1066,7 @@ const titles = {
                 "Final_93_6.jpg",
                 "Final_93_7.jpg"
             ],
+
 
             94: [
                 "Final_94_1.jpg",
@@ -442,6 +1079,7 @@ const titles = {
                 "Final_94_8.jpg"
             ],
 
+
             95: [
                 "Final_95_1.jpg",
                 "Final_95_2.jpg",
@@ -452,6 +1090,7 @@ const titles = {
                 "Final_95_7.jpg",
                 "Final_95_8.jpg"
             ],
+
 
             96: [
                 "Final_96_1.png",
@@ -466,6 +1105,7 @@ const titles = {
                 "Final_96_10.png"
             ],
 
+
             97: [
                 "Final_97_1.png",
                 "Final_97_2.png",
@@ -478,6 +1118,7 @@ const titles = {
                 "Final_97_9.png"
             ],
 
+
             98: [
                 "Final_98_1.jpg",
                 "Final_98_2.jpg",
@@ -486,6 +1127,7 @@ const titles = {
                 "Final_98_5.jpg",
                 "Final_98_6.jpg"
             ],
+
 
             99: [
                 "Final_99_1.jpg",
@@ -496,25 +1138,55 @@ const titles = {
             ]
 
         }
+
     }
 
 };
+
 
 
 /* =====================================================
    ЭЛЕМЕНТЫ
 ===================================================== */
 
-const catalog = document.getElementById("catalog");
-const titlePage = document.getElementById("titlePage");
-const reader = document.getElementById("reader");
+const catalog =
+    document.getElementById("catalog");
 
-const chapterList = document.getElementById("chapterList");
-const titleName = document.getElementById("titleName");
-const titleCover = document.getElementById("titleCover");
+const titlePage =
+    document.getElementById("titlePage");
 
-const readerTitle = document.getElementById("readerTitle");
-const readerPages = document.getElementById("readerPages");
+const reader =
+    document.getElementById("reader");
+
+const chapterList =
+    document.getElementById("chapterList");
+
+const titleName =
+    document.getElementById("titleName");
+
+const titleCover =
+    document.getElementById("titleCover");
+
+const readerTitle =
+    document.getElementById("readerTitle");
+
+const readerPages =
+    document.getElementById("readerPages");
+
+const readerDonate =
+    document.getElementById("readerDonate");
+
+const copyNumberText =
+    document.getElementById("copyNumberText");
+
+
+
+/* =====================================================
+   ТЕКУЩИЙ ТАЙТЛ
+===================================================== */
+
+let currentTitle = null;
+
 
 
 /* =====================================================
@@ -523,177 +1195,414 @@ const readerPages = document.getElementById("readerPages");
 
 function openTitle(id) {
 
-    const title = titles[id];
+
+    const title =
+        titles[id];
+
 
     if (!title) {
         return;
     }
 
+
+    currentTitle = title;
+
+
     catalog.classList.add("hidden");
+
     reader.classList.add("hidden");
+
     titlePage.classList.remove("hidden");
 
-    titleName.textContent = title.name;
 
-    /*
-     * Обложка.
-     * Если Final.JPG отсутствует,
-     * пробуем Final.JPG,
-     * затем первую страницу 92 главы.
-     */
+    titleName.textContent =
+        title.name;
+
+
+    /* ОБЛОЖКА */
 
     titleCover.onerror = function() {
 
-        if (this.dataset.fallback === "1") {
+        this.onerror = null;
 
-            this.onerror = null;
+        this.src =
+            title.chapters[92][0];
 
-            this.src = title.chapters[92][0];
-
-            return;
-        }
-
-        this.dataset.fallback = "1";
-        this.src = "Final.JPG";
     };
 
-    titleCover.dataset.fallback = "0";
-    titleCover.src = title.cover;
 
+    titleCover.src =
+        title.cover;
+
+
+    /* СПИСОК ГЛАВ */
 
     chapterList.innerHTML = "";
 
+
     /*
-     * Сортировка от 92 к 99.
+     * Главы идут:
+     *
+     * 92
+     * 93
+     * 94
+     * ...
+     * 99
      */
 
-    const chapters = Object.keys(title.chapters)
-        .sort((a, b) => Number(a) - Number(b));
-
-
-    chapters.forEach(chapter => {
-
-        const item = document.createElement("div");
-
-        item.className = "chapter-item";
-
-
-        const button = document.createElement("button");
-
-        button.className = "chapter-button";
-
-        button.textContent = `Глава ${chapter}`;
-
-        button.onclick = function() {
-
-            openChapter(
-                id,
-                Number(chapter)
+    const chapters =
+        Object.keys(title.chapters)
+            .sort(
+                (a, b) =>
+                    Number(a) - Number(b)
             );
 
-        };
+
+    chapters.forEach(
+        chapter => {
 
 
-        const donate = document.createElement("button");
+            const item =
+                document.createElement("div");
 
-        donate.className = "donate-button";
-
-        donate.textContent = "Поддержать команду";
-
-        donate.onclick = function(event) {
-
-            event.stopPropagation();
-
-            openDonation(title);
-
-        };
+            item.className =
+                "chapter-item";
 
 
-        item.appendChild(button);
-        item.appendChild(donate);
+            /* КНОПКА ГЛАВЫ */
 
-        chapterList.appendChild(item);
+            const button =
+                document.createElement("button");
 
-    });
+            button.className =
+                "chapter-button";
+
+            button.textContent =
+                `Глава ${chapter}`;
+
+
+            button.onclick =
+                function() {
+
+                    openChapter(
+                        id,
+                        Number(chapter)
+                    );
+
+                };
+
+
+            /* ДОНАТ */
+
+            const donate =
+                document.createElement("button");
+
+            donate.className =
+                "donate-button";
+
+            donate.type =
+                "button";
+
+            donate.textContent =
+                "Поддержать команду";
+
+
+            donate.onclick =
+                function(event) {
+
+                    event.stopPropagation();
+
+                    openDonation(title);
+
+                };
+
+
+            item.appendChild(button);
+
+            item.appendChild(donate);
+
+            chapterList.appendChild(item);
+
+        }
+    );
+
+
+    window.scrollTo(
+        0,
+        0
+    );
 
 }
+
 
 
 /* =====================================================
    ОТКРЫТЬ ГЛАВУ
 ===================================================== */
 
-function openChapter(titleId, chapterNumber) {
+function openChapter(
+    titleId,
+    chapterNumber
+) {
 
-    const title = titles[titleId];
+
+    const title =
+        titles[titleId];
+
 
     if (!title) {
         return;
     }
 
-    const pages = title.chapters[chapterNumber];
+
+    const pages =
+        title.chapters[chapterNumber];
+
 
     if (!pages) {
         return;
     }
 
 
-    titlePage.classList.add("hidden");
-    catalog.classList.add("hidden");
+    currentTitle =
+        title;
 
-    reader.classList.remove("hidden");
+
+    titlePage.classList.add(
+        "hidden"
+    );
+
+    catalog.classList.add(
+        "hidden"
+    );
+
+    reader.classList.remove(
+        "hidden"
+    );
 
 
     readerTitle.textContent =
         `${title.name} — Глава ${chapterNumber}`;
 
 
-    readerPages.innerHTML = "";
+    readerPages.innerHTML =
+        "";
 
 
     /*
-     * ВАЖНО:
-     * добавляем КАЖДУЮ страницу главы.
+     * СОЗДАЁМ ВСЕ СТРАНИЦЫ
      */
 
-    pages.forEach((file, index) => {
-
-        const img = document.createElement("img");
-
-        img.className = "reader-page";
-
-        img.alt =
-            `Глава ${chapterNumber}, страница ${index + 1}`;
-
-        img.src = file;
-
-        /*
-         * Если файл не найден, показываем
-         * понятное сообщение вместо пустого места.
-         */
-
-        img.onerror = function() {
-
-            const error = document.createElement("div");
-
-            error.style.padding = "30px 15px";
-            error.style.textAlign = "center";
-            error.style.background = "#19191f";
-            error.style.color = "#ff7777";
-
-            error.textContent =
-                `Не удалось загрузить: ${file}`;
-
-            this.replaceWith(error);
-
-        };
+    pages.forEach(
+        (file, index) => {
 
 
-        readerPages.appendChild(img);
+            const img =
+                document.createElement("img");
 
-    });
+
+            img.className =
+                "reader-page";
+
+
+            img.alt =
+                `Глава ${chapterNumber}, страница ${index + 1}`;
+
+
+            img.loading =
+                "lazy";
+
+
+            img.src =
+                file;
+
+
+            img.onerror =
+                function() {
+
+
+                    const error =
+                        document.createElement("div");
+
+
+                    error.className =
+                        "reader-error";
+
+
+                    error.textContent =
+                        `Не удалось загрузить страницу: ${file}`;
+
+
+                    this.replaceWith(
+                        error
+                    );
+
+                };
+
+
+            readerPages.appendChild(
+                img
+            );
+
+        }
+    );
+
+
+    updateDonation(
+        title
+    );
+
+
+    window.scrollTo(
+        0,
+        0
+    );
 
 }
+
+
+
+/* =====================================================
+   ДОНАТ
+===================================================== */
+
+function updateDonation(title) {
+
+
+    if (
+        !title ||
+        !title.donation
+    ) {
+        return;
+    }
+
+
+    const phone =
+        title.donation.phone;
+
+
+    readerDonate.href =
+        "tel:" + phone;
+
+
+    copyNumberText.innerHTML =
+        `${title.donation.bank}<br>${formatPhone(phone)}`;
+
+}
+
+
+
+/* =====================================================
+   ФОРМАТ НОМЕРА
+===================================================== */
+
+function formatPhone(phone) {
+
+
+    const digits =
+        phone.replace(/\D/g, "");
+
+
+    if (digits.length === 11) {
+
+        return "+" +
+            digits[0] + " " +
+            digits.substring(1, 4) + " " +
+            digits.substring(4, 7) + "-" +
+            digits.substring(7, 9) + "-" +
+            digits.substring(9, 11);
+
+    }
+
+
+    return phone;
+
+}
+
+
+
+/* =====================================================
+   ОТКРЫТЬ ДОНАТ ИЗ СПИСКА ГЛАВ
+===================================================== */
+
+function openDonation(title) {
+
+
+    if (
+        !title ||
+        !title.donation
+    ) {
+        return;
+    }
+
+
+    window.location.href =
+        "tel:" +
+        title.donation.phone;
+
+}
+
+
+
+/* =====================================================
+   КОПИРОВАНИЕ
+===================================================== */
+
+function copyNumber() {
+
+
+    if (
+        !currentTitle ||
+        !currentTitle.donation
+    ) {
+        return;
+    }
+
+
+    const number =
+        currentTitle.donation.phone;
+
+
+    if (
+        navigator.clipboard &&
+        navigator.clipboard.writeText
+    ) {
+
+
+        navigator.clipboard
+            .writeText(number)
+            .then(
+                () => {
+
+                    alert(
+                        "Номер скопирован"
+                    );
+
+                }
+            )
+            .catch(
+                () => {
+
+                    alert(
+                        "Номер для перевода: " +
+                        number
+                    );
+
+                }
+            );
+
+
+    } else {
+
+        alert(
+            "Номер для перевода: " +
+            number
+        );
+
+    }
+
+}
+
 
 
 /* =====================================================
@@ -702,13 +1611,27 @@ function openChapter(titleId, chapterNumber) {
 
 function backToCatalog() {
 
-    titlePage.classList.add("hidden");
-    reader.classList.add("hidden");
 
-    catalog.classList.remove("hidden");
+    titlePage.classList.add(
+        "hidden"
+    );
 
-    window.scrollTo(0, 0);
+    reader.classList.add(
+        "hidden"
+    );
+
+    catalog.classList.remove(
+        "hidden"
+    );
+
+
+    window.scrollTo(
+        0,
+        0
+    );
+
 }
+
 
 
 /* =====================================================
@@ -717,56 +1640,24 @@ function backToCatalog() {
 
 function backToChapters() {
 
-    reader.classList.add("hidden");
-    titlePage.classList.remove("hidden");
 
-    window.scrollTo(0, 0);
-}
+    reader.classList.add(
+        "hidden"
+    );
 
-
-/* =====================================================
-   ДОНАТ
-===================================================== */
-
-function openDonation(title) {
-
-    /*
-     * На телефоне открываем приложение,
-     * которое связано с номером телефона.
-     */
-
-    window.location.href =
-        "tel:" + title.donation.phone;
-
-}
+    titlePage.classList.remove(
+        "hidden"
+    );
 
 
-/* =====================================================
-   КОПИРОВАНИЕ НОМЕРА
-===================================================== */
-
-function copyNumber() {
-
-    const number = "+79635956661";
-
-    navigator.clipboard.writeText(number)
-        .then(() => {
-
-            alert("Номер скопирован");
-
-        })
-        .catch(() => {
-
-            alert(
-                "Номер для перевода: " +
-                number
-            );
-
-        });
+    window.scrollTo(
+        0,
+        0
+    );
 
 }
 
 </script>
 
 </body>
-</html>
+</html></html>
