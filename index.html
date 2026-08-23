@@ -5,8 +5,10 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+>
 
 <meta name="theme-color" content="#120d1f">
 
@@ -17,7 +19,7 @@
 <style>
 
 /* =========================
-   ОСНОВНЫЕ СТИЛИ
+   ОСНОВА
 ========================= */
 
 * {
@@ -58,9 +60,8 @@ button {
     cursor: pointer;
 }
 
-
 /* =========================
-   ОСНОВНОЙ КОНТЕЙНЕР
+   КОНТЕЙНЕР
 ========================= */
 
 .wrap {
@@ -73,7 +74,6 @@ button {
     padding: 18px;
 }
 
-
 /* =========================
    ГЛАВНЫЙ БЛОК
 ========================= */
@@ -82,7 +82,8 @@ button {
 
     overflow: hidden;
 
-    background: rgba(16, 10, 27, .88);
+    background:
+        rgba(16, 10, 27, .88);
 
     border:
         1px solid
@@ -100,6 +101,7 @@ button {
     display: block;
 
     width: 100%;
+
     height: auto;
 }
 
@@ -126,7 +128,6 @@ h1 {
     font-size: 16px;
 }
 
-
 /* =========================
    КНОПКИ
 ========================= */
@@ -139,8 +140,6 @@ h1 {
 }
 
 button {
-
-    display: block;
 
     width: 100%;
 
@@ -159,8 +158,6 @@ button {
 
     color: white;
 
-    text-align: center;
-
     font-size: 16px;
 
     font-weight: 700;
@@ -170,6 +167,10 @@ button {
         rgba(112, 48, 210, .25);
 }
 
+button:active {
+
+    transform: scale(.98);
+}
 
 /* =========================
    СЕКЦИИ
@@ -191,9 +192,9 @@ button {
         rgba(150, 70, 255, .35);
 }
 
-.section.hidden {
+.hidden {
 
-    display: none;
+    display: none !important;
 }
 
 .section h2 {
@@ -203,9 +204,8 @@ button {
     font-size: 24px;
 }
 
-
 /* =========================
-   КАРТОЧКИ ТАЙТЛОВ
+   КАРТОЧКА ТАЙТЛА
 ========================= */
 
 .title-card {
@@ -230,12 +230,15 @@ button {
 
 .title-card img {
 
-    width: 130px;
-    height: 180px;
+    width: 110px;
+
+    height: 155px;
 
     object-fit: cover;
 
     border-radius: 14px;
+
+    flex-shrink: 0;
 }
 
 .title-info {
@@ -252,11 +255,172 @@ button {
 
 .title-info p {
 
-    margin: 0 0 16px;
+    margin: 0 0 14px;
 
     color: #cbb9dc;
+
+    line-height: 1.4;
 }
 
+/* =========================
+   СПИСОК ГЛАВ
+========================= */
+
+.chapter-list {
+
+    display: grid;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.chapter-item {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 13px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+.chapter-name {
+
+    font-weight: 700;
+
+    font-size: 16px;
+}
+
+.chapter-buttons {
+
+    display: flex;
+
+    gap: 8px;
+
+    align-items: center;
+}
+
+.chapter-read {
+
+    width: auto;
+
+    min-width: 95px;
+
+    padding: 10px 13px;
+
+    border-radius: 13px;
+
+    font-size: 14px;
+}
+
+.chapter-donate {
+
+    width: auto;
+
+    min-width: 48px;
+
+    padding: 10px 12px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(150,70,255,.22);
+
+    box-shadow: none;
+
+    font-size: 18px;
+}
+
+/* =========================
+   ДОНАТ
+========================= */
+
+.donate-box {
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(124,52,210,.12);
+
+    border:
+        1px solid
+        rgba(150,70,255,.35);
+}
+
+.donate-box h3 {
+
+    margin-top: 0;
+
+    margin-bottom: 8px;
+}
+
+.donate-text {
+
+    color: #cbb9dc;
+
+    line-height: 1.5;
+
+    margin-bottom: 14px;
+}
+
+.phone-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 12px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(0,0,0,.25);
+}
+
+.phone-number {
+
+    flex: 1;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    letter-spacing: .5px;
+
+    word-break: break-all;
+}
+
+.copy-button {
+
+    width: auto;
+
+    min-width: 90px;
+
+    padding: 10px 12px;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+}
 
 /* =========================
    НАЗАД
@@ -264,7 +428,7 @@ button {
 
 .back-button {
 
-    margin-top: 10px;
+    margin-top: 16px;
 
     background:
         rgba(255,255,255,.08);
@@ -272,14 +436,11 @@ button {
     box-shadow: none;
 }
 
-
 /* =========================
-   ИНФОРМАЦИЯ
+   ИНФО
 ========================= */
 
 .info {
-
-    margin-top: 20px;
 
     padding: 16px;
 
@@ -292,7 +453,6 @@ button {
 
     line-height: 1.5;
 }
-
 
 /* =========================
    FOOTER
@@ -309,9 +469,8 @@ button {
     font-size: 13px;
 }
 
-
 /* =========================
-   РИДЕР
+   ЧИТАЛКА
 ========================= */
 
 #reader {
@@ -325,11 +484,10 @@ button {
     z-index: 99999;
 
     width: 100%;
+
     height: 100%;
 
     background: #050309;
-
-    color: white;
 
     flex-direction: column;
 }
@@ -338,11 +496,6 @@ button {
 
     display: flex;
 }
-
-
-/* =========================
-   ШАПКА РИДЕРА
-========================= */
 
 .reader-header {
 
@@ -354,15 +507,12 @@ button {
 
     align-items: center;
 
-    justify-content: space-between;
-
     gap: 10px;
 
-    padding:
-        8px 14px;
+    padding: 8px 14px;
 
     background:
-        rgba(15, 9, 23, .98);
+        rgba(15,9,23,.98);
 
     border-bottom:
         1px solid
@@ -371,25 +521,17 @@ button {
 
 .reader-close {
 
-    width: 48px !important;
-    min-width: 48px;
+    width: 45px !important;
 
-    height: 48px;
+    min-width: 45px;
+
+    height: 45px;
 
     padding: 0 !important;
 
     border-radius: 50% !important;
 
-    background:
-        linear-gradient(
-            135deg,
-            #762bd4,
-            #963cff
-        ) !important;
-
-    font-size: 28px !important;
-
-    line-height: 48px;
+    font-size: 27px !important;
 }
 
 .reader-title {
@@ -398,7 +540,7 @@ button {
 
     text-align: center;
 
-    font-size: 16px;
+    font-size: 15px;
 
     font-weight: 700;
 
@@ -417,15 +559,10 @@ button {
 
     color: #c9a9e8;
 
-    font-size: 15px;
+    font-size: 14px;
 
     font-weight: 600;
 }
-
-
-/* =========================
-   ОБЛАСТЬ СТРАНИЦЫ
-========================= */
 
 .reader-content {
 
@@ -448,11 +585,6 @@ button {
     background: #050309;
 }
 
-
-/* =========================
-   ИЗОБРАЖЕНИЕ
-========================= */
-
 #readerImage {
 
     display: block;
@@ -465,11 +597,6 @@ button {
 
     margin: 0 auto;
 }
-
-
-/* =========================
-   КНОПКИ РИДЕРА
-========================= */
 
 .reader-controls {
 
@@ -486,7 +613,7 @@ button {
         14px;
 
     background:
-        rgba(15, 9, 23, .98);
+        rgba(15,9,23,.98);
 
     border-top:
         1px solid
@@ -501,68 +628,64 @@ button {
 
     padding: 0;
 
-    border: none;
-
     border-radius: 17px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #762bd4,
-            #963cff
-        );
-
-    color: white;
-
-    font-size: 19px;
-
-    font-weight: 700;
+    font-size: 18px;
 }
 
 .reader-controls button:disabled {
 
-    opacity: .4;
+    opacity: .35;
 }
 
-
 /* =========================
-   МОБИЛЬНАЯ ВЕРСИЯ
+   МОБИЛЬНЫЕ
 ========================= */
 
 @media (max-width: 500px) {
 
     .wrap {
+
         padding: 10px;
     }
 
     .content {
+
         padding: 18px;
     }
 
     h1 {
+
         font-size: 27px;
     }
 
-    .title-card {
-        gap: 12px;
-    }
-
     .title-card img {
-        width: 100px;
-        height: 140px;
+
+        width: 95px;
+
+        height: 135px;
     }
 
     .title-info h3 {
+
         font-size: 17px;
     }
 
-    .reader-title {
-        font-size: 14px;
+    .chapter-item {
+
+        flex-direction: column;
+
+        align-items: stretch;
     }
 
-    .reader-counter {
-        font-size: 14px;
-        min-width: 52px;
+    .chapter-buttons {
+
+        width: 100%;
+    }
+
+    .chapter-buttons button {
+
+        flex: 1;
     }
 
 }
@@ -573,7 +696,6 @@ button {
 
 
 <body>
-
 
 <main class="wrap">
 
@@ -637,14 +759,10 @@ button {
     id="catalog"
     class="section hidden">
 
-    <h2>
-        📚 Каталог тайтлов
-    </h2>
+    <h2>📚 Каталог тайтлов</h2>
 
 
-    <!-- =========================
-         ВОР И СТЕКЛЯННАЯ ПРИНЦЕССА
-    ========================== -->
+    <!-- ВОР -->
 
     <div class="title-card">
 
@@ -664,9 +782,9 @@ button {
             </p>
 
             <button
-                onclick="openGlassReader()">
+                onclick="openTitle('glass')">
 
-                Читать
+                Открыть тайтл
 
             </button>
 
@@ -675,9 +793,7 @@ button {
     </div>
 
 
-    <!-- =========================
-         ЛАКТЕЯ
-    ========================== -->
+    <!-- ЛАКТЕЯ -->
 
     <div class="title-card">
 
@@ -693,13 +809,13 @@ button {
             </h3>
 
             <p>
-                Манхва · Глава 3
+                Манхва · В процессе
             </p>
 
             <button
-                onclick="openRockteaReader()">
+                onclick="openTitle('rocktea')">
 
-                Читать
+                Открыть тайтл
 
             </button>
 
@@ -708,31 +824,29 @@ button {
     </div>
 
 
-    <!-- =========================
-         ТРЕТИЙ ТАЙТЛ
-    ========================== -->
+    <!-- СЧАСТЛИВЫЙ ФИНАЛ -->
 
     <div class="title-card">
 
         <img
-            src="efil-team.jpg"
-            alt="Название третьего тайтла"
+            src="Final.jpg"
+            alt="Счастливый финал для умирающей злодейки"
         >
 
         <div class="title-info">
 
             <h3>
-                Название третьего тайтла
+                Счастливый финал для умирающей злодейки
             </h3>
 
             <p>
-                Вебтун · В процессе
+                Манхва · В процессе
             </p>
 
             <button
-                onclick="showComingSoon()">
+                onclick="openTitle('final')">
 
-                Читать
+                Открыть тайтл
 
             </button>
 
@@ -746,6 +860,75 @@ button {
         onclick="showSection('home')">
 
         ← Назад
+
+    </button>
+
+</section>
+
+
+<!-- =========================
+     СТРАНИЦА ТАЙТЛА
+========================= -->
+
+<section
+    id="titlePage"
+    class="section hidden">
+
+    <h2 id="titlePageName">
+        Название
+    </h2>
+
+
+    <div
+        id="chapterList"
+        class="chapter-list">
+    </div>
+
+
+    <div
+        id="donateBox"
+        class="donate-box">
+
+        <h3>
+            💜 Поддержать команду
+        </h3>
+
+        <div class="donate-text">
+
+            Если вам нравится наша работа,
+            вы можете поддержать переводчиков.
+            Спасибо за вашу поддержку!
+
+        </div>
+
+        <div class="phone-box">
+
+            <div
+                id="donatePhone"
+                class="phone-number">
+
+                +7 963 595-66-61
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyDonationNumber()">
+
+                Копировать
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="back-button"
+        onclick="showSection('catalog')">
+
+        ← К каталогу
 
     </button>
 
@@ -766,8 +949,8 @@ button {
 
     <div class="info">
 
-        Здесь будут отображаться последние
-        опубликованные главы ваших тайтлов.
+        Последние опубликованные главы
+        будут отображаться здесь.
 
     </div>
 
@@ -788,19 +971,16 @@ button {
 
 </div>
 
-
 </main>
 
 
 <!-- =========================
-     ЕДИНЫЙ РИДЕР
+     ЧИТАЛКА
 ========================= -->
 
 <div id="reader">
 
-
     <div class="reader-header">
-
 
         <button
             class="reader-close"
@@ -815,7 +995,7 @@ button {
             id="readerTitle"
             class="reader-title">
 
-            Лактея
+            Глава
 
         </div>
 
@@ -828,7 +1008,6 @@ button {
 
         </div>
 
-
     </div>
 
 
@@ -836,19 +1015,16 @@ button {
         id="readerContent"
         class="reader-content">
 
-
         <img
             id="readerImage"
             src=""
             alt="Страница"
         >
 
-
     </div>
 
 
     <div class="reader-controls">
-
 
         <button
             id="previousButton"
@@ -867,9 +1043,7 @@ button {
 
         </button>
 
-
     </div>
-
 
 </div>
 
@@ -893,7 +1067,163 @@ if (tg) {
 
 
 /* =========================
-   ПЕРЕКЛЮЧЕНИЕ РАЗДЕЛОВ
+   НАСТРОЙКИ ТАЙТЛОВ
+========================= */
+
+const titles = {
+
+
+    /* =====================
+       ВОР
+    ===================== */
+
+    glass: {
+
+        name:
+            "Вор и стеклянная принцесса",
+
+        donation:
+            "+79635956661",
+
+        chapters: {
+
+            "1": [
+
+                "vor-1.jpg.JPG",
+                "vor-2.jpg.JPG",
+                "vor-3.jpg.JPG",
+                "vor-4.jpg.JPG",
+                "vor-5.jpg.JPG",
+                "vor-6.jpg.JPG",
+                "vor-7.jpg.JPG",
+                "vor-8.jpg.JPG",
+                "vor-9.jpg.JPG",
+                "vor-10.jpg.JPG",
+                "vor-11.jpg.JPG",
+                "vor-12.jpg.JPG",
+                "vor-13.jpg.JPG",
+                "vor-14.jpg.JPG",
+                "vor-15.jpg.JPG",
+                "vor-16.jpg.JPG",
+                "vor-17.jpg.JPG",
+                "vor-18.jpg.JPG",
+                "vor-19.jpg.JPG",
+                "vor-20.jpg.JPG"
+
+            ]
+
+        }
+
+    },
+
+
+    /* =====================
+       ЛАКТЕЯ
+    ===================== */
+
+    rocktea: {
+
+        name:
+            "Лактея",
+
+        donation:
+            "+79635956661",
+
+        chapters: {
+
+            "3": [
+
+                "1.JPG",
+                "2.JPG",
+                "3.JPG",
+                "4.JPG",
+                "5.JPG",
+                "6.JPG",
+                "7.JPG",
+                "8.JPG",
+                "9.JPG",
+                "10.JPG",
+                "11.JPG",
+                "12.JPG"
+
+            ]
+
+        }
+
+    },
+
+
+    /* =====================
+       СЧАСТЛИВЫЙ ФИНАЛ
+    ===================== */
+
+    final: {
+
+        name:
+            "Счастливый финал для умирающей злодейки",
+
+        donation:
+            "+79635956661",
+
+        chapters: {
+
+            "92": [
+                "Final-92-1.PNG",
+                "Final-92-2.PNG",
+                "Final-92-3.PNG"
+            ],
+
+            "93": [
+                "Final-93-1.PNG",
+                "Final-93-2.PNG",
+                "Final-93-3.PNG"
+            ],
+
+            "94": [
+                "Final-94-1.PNG",
+                "Final-94-2.PNG",
+                "Final-94-3.PNG"
+            ],
+
+            "95": [
+                "Final-95-1.PNG",
+                "Final-95-2.PNG",
+                "Final-95-3.PNG"
+            ],
+
+            "96": [
+                "Final-96-1.PNG",
+                "Final-96-2.PNG",
+                "Final-96-3.PNG"
+            ],
+
+            "97": [
+                "Final-97-1.PNG",
+                "Final-97-2.PNG",
+                "Final-97-3.PNG"
+            ],
+
+            "98": [
+                "Final-98-1.PNG",
+                "Final-98-2.PNG",
+                "Final-98-3.PNG"
+            ],
+
+            "99": [
+                "Final-99-1.PNG",
+                "Final-99-2.PNG",
+                "Final-99-3.PNG"
+            ]
+
+        }
+
+    }
+
+};
+
+
+/* =========================
+   РАЗДЕЛЫ
 ========================= */
 
 function showSection(id) {
@@ -926,120 +1256,277 @@ function showSection(id) {
 
 
 /* =========================
-   ВОР И СТЕКЛЯННАЯ ПРИНЦЕССА
-   20 СТРАНИЦ
+   ОТКРЫТЬ ТАЙТЛ
 ========================= */
 
-const glassPages = [
+let currentTitle = null;
 
-    "vor-1.jpg.JPG",
-    "vor-2.jpg.JPG",
-    "vor-3.jpg.JPG",
-    "vor-4.jpg.JPG",
-    "vor-5.jpg.JPG",
-    "vor-6.jpg.JPG",
-    "vor-7.jpg.JPG",
-    "vor-8.jpg.JPG",
-    "vor-9.jpg.JPG",
-    "vor-10.jpg.JPG",
-    "vor-11.jpg.JPG",
-    "vor-12.jpg.JPG",
-    "vor-13.jpg.JPG",
-    "vor-14.jpg.JPG",
-    "vor-15.jpg.JPG",
-    "vor-16.jpg.JPG",
-    "vor-17.jpg.JPG",
-    "vor-18.jpg.JPG",
-    "vor-19.jpg.JPG",
-    "vor-20.jpg.JPG"
+function openTitle(id) {
 
-];
+    const title =
+        titles[id];
+
+    if (!title) return;
+
+
+    currentTitle = id;
+
+
+    document.getElementById("titlePageName")
+        .textContent =
+        title.name;
+
+
+    document.getElementById("donatePhone")
+        .textContent =
+        formatPhone(title.donation);
+
+
+    const list =
+        document.getElementById("chapterList");
+
+
+    list.innerHTML = "";
+
+
+    const chapters =
+        Object.keys(title.chapters)
+        .sort((a,b) => Number(b) - Number(a));
+
+
+    chapters.forEach(chapter => {
+
+        const item =
+            document.createElement("div");
+
+        item.className =
+            "chapter-item";
+
+
+        const name =
+            document.createElement("div");
+
+        name.className =
+            "chapter-name";
+
+        name.textContent =
+            "Глава " + chapter;
+
+
+        const buttons =
+            document.createElement("div");
+
+        buttons.className =
+            "chapter-buttons";
+
+
+        const read =
+            document.createElement("button");
+
+        read.className =
+            "chapter-read";
+
+        read.textContent =
+            "Читать";
+
+
+        read.onclick =
+            function() {
+
+                openChapter(
+                    id,
+                    chapter
+                );
+
+            };
+
+
+        const donate =
+            document.createElement("button");
+
+        donate.className =
+            "chapter-donate";
+
+        donate.textContent =
+            "💜";
+
+        donate.title =
+            "Поддержать команду";
+
+
+        donate.onclick =
+            function() {
+
+                showDonation(
+                    title.donation
+                );
+
+            };
+
+
+        buttons.appendChild(read);
+
+        buttons.appendChild(donate);
+
+
+        item.appendChild(name);
+
+        item.appendChild(buttons);
+
+
+        list.appendChild(item);
+
+    });
+
+
+    showSection("titlePage");
+
+}
 
 
 /* =========================
-   ЛАКТЕЯ
-   ГЛАВА 3
-   12 СТРАНИЦ
+   ФОРМАТ НОМЕРА
 ========================= */
 
-const rockteaPages = [
+function formatPhone(phone) {
 
-    "1.JPG",
-    "2.JPG",
-    "3.JPG",
-    "4.JPG",
-    "5.JPG",
-    "6.JPG",
-    "7.JPG",
-    "8.JPG",
-    "9.JPG",
-    "10.JPG",
-    "11.JPG",
-    "12.JPG"
+    if (
+        phone === "+79635956661"
+    ) {
 
-];
+        return "+7 963 595-66-61";
+
+    }
+
+    return phone;
+
+}
 
 
 /* =========================
-   СОСТОЯНИЕ РИДЕРА
+   ДОНАТ
+========================= */
+
+function showDonation(phone) {
+
+    const text =
+        "Номер для поддержки:\n\n" +
+        formatPhone(phone);
+
+    alert(text);
+
+}
+
+
+/* =========================
+   КОПИРОВАНИЕ
+========================= */
+
+function copyDonationNumber() {
+
+    if (!currentTitle) return;
+
+
+    const phone =
+        titles[currentTitle].donation;
+
+
+    if (
+        navigator.clipboard &&
+        navigator.clipboard.writeText
+    ) {
+
+        navigator.clipboard
+            .writeText(phone)
+            .then(() => {
+
+                alert(
+                    "Номер скопирован 💜"
+                );
+
+            });
+
+    } else {
+
+        const input =
+            document.createElement("input");
+
+        input.value = phone;
+
+        document.body.appendChild(input);
+
+        input.select();
+
+        document.execCommand("copy");
+
+        input.remove();
+
+        alert(
+            "Номер скопирован 💜"
+        );
+
+    }
+
+}
+
+
+/* =========================
+   ОТКРЫТЬ ГЛАВУ
 ========================= */
 
 let currentPages = [];
 
 let currentPage = 0;
 
-let currentTitle = "";
+let currentChapterName = "";
 
 
-/* =========================
-   ОТКРЫТЬ ВОРА
-========================= */
+function openChapter(
+    titleId,
+    chapter
+) {
 
-function openGlassReader() {
+    const title =
+        titles[titleId];
+
+    if (!title) return;
+
 
     currentPages =
-        glassPages;
+        title.chapters[chapter] || [];
+
+
+    if (
+        currentPages.length === 0
+    ) {
+
+        alert(
+            "Страницы этой главы ещё не загружены."
+        );
+
+        return;
+
+    }
+
 
     currentPage = 0;
 
-    currentTitle =
-        "Вор и стеклянная принцесса";
 
-    openReader();
-
-}
-
-
-/* =========================
-   ОТКРЫТЬ ЛАКТЕЮ
-========================= */
-
-function openRockteaReader() {
-
-    currentPages =
-        rockteaPages;
-
-    currentPage = 0;
-
-    currentTitle =
-        "Лактея · Глава 3";
-
-    openReader();
-
-}
+    currentChapterName =
+        title.name +
+        " · Глава " +
+        chapter;
 
 
-/* =========================
-   ОБЩИЙ РИДЕР
-========================= */
-
-function openReader() {
-
-    const reader =
-        document.getElementById("reader");
+    document.getElementById(
+        "readerTitle"
+    ).textContent =
+        currentChapterName;
 
 
-    reader.classList.add("active");
+    document.getElementById(
+        "reader"
+    ).classList.add("active");
 
 
     document.body.style.overflow =
@@ -1052,60 +1539,33 @@ function openReader() {
 
 
 /* =========================
-   ЗАКРЫТЬ
-========================= */
-
-function closeReader() {
-
-    const reader =
-        document.getElementById("reader");
-
-
-    reader.classList.remove("active");
-
-
-    document.body.style.overflow =
-        "";
-
-
-    const image =
-        document.getElementById("readerImage");
-
-
-    image.src = "";
-
-}
-
-
-/* =========================
    ПОКАЗАТЬ СТРАНИЦУ
 ========================= */
 
 function showPage() {
 
-    if (!currentPages.length) {
-        return;
-    }
-
-
     const image =
-        document.getElementById("readerImage");
+        document.getElementById(
+            "readerImage"
+        );
 
 
     const counter =
-        document.getElementById("pageNumber");
-
-
-    const title =
-        document.getElementById("readerTitle");
+        document.getElementById(
+            "pageNumber"
+        );
 
 
     const previous =
-        document.getElementById("previousButton");
+        document.getElementById(
+            "previousButton"
+        );
 
 
     const next =
-        document.getElementById("nextButton");
+        document.getElementById(
+            "nextButton"
+        );
 
 
     image.src =
@@ -1113,13 +1573,9 @@ function showPage() {
 
 
     image.alt =
-        currentTitle +
+        currentChapterName +
         " — страница " +
         (currentPage + 1);
-
-
-    title.textContent =
-        currentTitle;
 
 
     counter.textContent =
@@ -1137,15 +1593,15 @@ function showPage() {
         currentPages.length - 1;
 
 
-    document
-        .getElementById("readerContent")
-        .scrollTop = 0;
+    document.getElementById(
+        "readerContent"
+    ).scrollTop = 0;
 
 }
 
 
 /* =========================
-   ВПЕРЁД
+   СЛЕДУЮЩАЯ
 ========================= */
 
 function nextPage() {
@@ -1165,7 +1621,7 @@ function nextPage() {
 
 
 /* =========================
-   НАЗАД
+   ПРЕДЫДУЩАЯ
 ========================= */
 
 function previousPage() {
@@ -1184,7 +1640,7 @@ function previousPage() {
 
 
 /* =========================
-   СВАЙП
+   СВАЙПЫ
 ========================= */
 
 let touchStartX = 0;
@@ -1192,90 +1648,95 @@ let touchStartX = 0;
 let touchStartY = 0;
 
 
-const reader =
-    document.getElementById("reader");
+document
+    .getElementById("reader")
+    .addEventListener(
+        "touchstart",
+        function(e) {
+
+            touchStartX =
+                e.changedTouches[0]
+                .screenX;
+
+            touchStartY =
+                e.changedTouches[0]
+                .screenY;
+
+        },
+        { passive: true }
+    );
 
 
-reader.addEventListener(
-    "touchstart",
-    function(e) {
+document
+    .getElementById("reader")
+    .addEventListener(
+        "touchend",
+        function(e) {
 
-        if (!reader.classList.contains("active")) {
-            return;
-        }
+            const endX =
+                e.changedTouches[0]
+                .screenX;
 
-
-        touchStartX =
-            e.changedTouches[0].screenX;
-
-
-        touchStartY =
-            e.changedTouches[0].screenY;
-
-    },
-    { passive: true }
-);
+            const endY =
+                e.changedTouches[0]
+                .screenY;
 
 
-reader.addEventListener(
-    "touchend",
-    function(e) {
+            const diffX =
+                touchStartX - endX;
 
-        if (!reader.classList.contains("active")) {
-            return;
-        }
+            const diffY =
+                touchStartY - endY;
 
 
-        const touchEndX =
-            e.changedTouches[0].screenX;
+            if (
+                Math.abs(diffX) <
+                Math.abs(diffY)
+            ) {
+
+                return;
+
+            }
 
 
-        const touchEndY =
-            e.changedTouches[0].screenY;
+            if (
+                Math.abs(diffX) < 50
+            ) {
+
+                return;
+
+            }
 
 
-        const differenceX =
-            touchStartX -
-            touchEndX;
+            if (diffX > 0) {
+
+                nextPage();
+
+            } else {
+
+                previousPage();
+
+            }
+
+        },
+        { passive: true }
+    );
 
 
-        const differenceY =
-            touchStartY -
-            touchEndY;
+/* =========================
+   ЗАКРЫТЬ ЧИТАЛКУ
+========================= */
+
+function closeReader() {
+
+    document
+        .getElementById("reader")
+        .classList.remove("active");
 
 
-        if (
-            Math.abs(differenceX) <
-            Math.abs(differenceY)
-        ) {
+    document.body.style.overflow = "";
 
-            return;
-
-        }
-
-
-        if (
-            Math.abs(differenceX) < 50
-        ) {
-
-            return;
-
-        }
-
-
-        if (differenceX > 0) {
-
-            nextPage();
-
-        } else {
-
-            previousPage();
-
-        }
-
-    },
-    { passive: true }
-);
+}
 
 
 /* =========================
@@ -1300,21 +1761,7 @@ function tgLink(url) {
 
 }
 
-
-/* =========================
-   ЗАГЛУШКА
-========================= */
-
-function showComingSoon() {
-
-    alert(
-        "Этот тайтл пока не добавлен."
-    );
-
-}
-
 </script>
-
 
 </body>
 
