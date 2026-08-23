@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="ru">
+
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport"
@@ -14,6 +16,10 @@
 
 <style>
 
+/* =========================
+   ОСНОВНЫЕ СТИЛИ
+========================= */
+
 * {
     box-sizing: border-box;
 }
@@ -26,6 +32,7 @@ body {
 }
 
 body {
+
     font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -51,63 +58,88 @@ button {
     cursor: pointer;
 }
 
-/* ОСНОВНОЙ КОНТЕЙНЕР */
+
+/* =========================
+   ОСНОВНОЙ КОНТЕЙНЕР
+========================= */
 
 .wrap {
+
     width: 100%;
     max-width: 720px;
+
     margin: auto;
+
     padding: 18px;
 }
 
-/* ГЛАВНЫЙ БЛОК */
+
+/* =========================
+   ГЛАВНЫЙ БЛОК
+========================= */
 
 .hero {
+
     overflow: hidden;
 
     background: rgba(16, 10, 27, .88);
 
-    border: 1px solid rgba(150, 70, 255, .45);
+    border:
+        1px solid
+        rgba(150, 70, 255, .45);
 
     border-radius: 28px;
 
     box-shadow:
-        0 0 25px rgba(126, 47, 255, .25);
+        0 0 25px
+        rgba(126, 47, 255, .25);
 }
 
 .hero img {
+
     display: block;
+
     width: 100%;
     height: auto;
 }
 
 .content {
+
     padding: 22px;
 }
 
 h1 {
+
     margin: 0 0 8px;
 
     font-size: 30px;
+
     letter-spacing: 1px;
 }
 
 .sub {
+
     margin: 0 0 22px;
 
     color: #cbb9dc;
+
     font-size: 16px;
 }
 
-/* КНОПКИ */
+
+/* =========================
+   КНОПКИ
+========================= */
 
 .buttons {
+
     display: grid;
+
     gap: 12px;
 }
 
-button,
-a.button {
+button {
+
     display: block;
 
     width: 100%;
@@ -115,6 +147,7 @@ a.button {
     padding: 15px 18px;
 
     border: 0;
+
     border-radius: 18px;
 
     background:
@@ -129,41 +162,54 @@ a.button {
     text-align: center;
 
     font-size: 16px;
+
     font-weight: 700;
 
-    text-decoration: none;
-
     box-shadow:
-        0 5px 18px rgba(112, 48, 210, .25);
+        0 5px 18px
+        rgba(112, 48, 210, .25);
 }
 
-/* СЕКЦИИ */
+
+/* =========================
+   СЕКЦИИ
+========================= */
 
 .section {
+
     margin-top: 20px;
 
     padding: 22px;
 
     border-radius: 24px;
 
-    background: rgba(16, 10, 27, .88);
+    background:
+        rgba(16, 10, 27, .88);
 
-    border: 1px solid rgba(150, 70, 255, .35);
+    border:
+        1px solid
+        rgba(150, 70, 255, .35);
 }
 
 .section.hidden {
+
     display: none;
 }
 
 .section h2 {
+
     margin-top: 0;
 
     font-size: 24px;
 }
 
-/* КАРТОЧКА ТАЙТЛА */
+
+/* =========================
+   КАРТОЧКИ ТАЙТЛОВ
+========================= */
 
 .title-card {
+
     display: flex;
 
     gap: 16px;
@@ -174,12 +220,16 @@ a.button {
 
     border-radius: 20px;
 
-    background: rgba(255,255,255,.06);
+    background:
+        rgba(255,255,255,.06);
 
-    border: 1px solid rgba(255,255,255,.08);
+    border:
+        1px solid
+        rgba(255,255,255,.08);
 }
 
 .title-card img {
+
     width: 130px;
     height: 180px;
 
@@ -189,50 +239,67 @@ a.button {
 }
 
 .title-info {
+
     flex: 1;
 }
 
 .title-info h3 {
+
     margin: 4px 0 8px;
 
     font-size: 20px;
 }
 
 .title-info p {
+
     margin: 0 0 16px;
 
     color: #cbb9dc;
 }
 
-/* КНОПКА НАЗАД */
+
+/* =========================
+   НАЗАД
+========================= */
 
 .back-button {
+
     margin-top: 10px;
 
-    background: rgba(255,255,255,.08);
+    background:
+        rgba(255,255,255,.08);
 
     box-shadow: none;
 }
 
-/* ИНФО */
+
+/* =========================
+   ИНФОРМАЦИЯ
+========================= */
 
 .info {
+
     margin-top: 20px;
 
     padding: 16px;
 
     border-radius: 18px;
 
-    background: rgba(255,255,255,.05);
+    background:
+        rgba(255,255,255,.05);
 
     color: #cfc5d8;
 
     line-height: 1.5;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 .footer {
+
     padding: 22px;
 
     text-align: center;
@@ -244,10 +311,11 @@ a.button {
 
 
 /* =========================
-   ЧИТАЛКА
+   РИДЕР
 ========================= */
 
 #reader {
+
     display: none;
 
     position: fixed;
@@ -267,12 +335,17 @@ a.button {
 }
 
 #reader.active {
+
     display: flex;
 }
 
-/* ШАПКА */
+
+/* =========================
+   ШАПКА РИДЕРА
+========================= */
 
 .reader-header {
+
     flex-shrink: 0;
 
     height: 64px;
@@ -286,12 +359,10 @@ a.button {
     gap: 10px;
 
     padding:
-        8px
-        14px
-        8px
-        14px;
+        8px 14px;
 
-    background: rgba(15, 9, 23, .98);
+    background:
+        rgba(15, 9, 23, .98);
 
     border-bottom:
         1px solid
@@ -299,10 +370,11 @@ a.button {
 }
 
 .reader-close {
-    width: 48px !important;
-    height: 48px;
 
+    width: 48px !important;
     min-width: 48px;
+
+    height: 48px;
 
     padding: 0 !important;
 
@@ -321,6 +393,7 @@ a.button {
 }
 
 .reader-title {
+
     flex: 1;
 
     text-align: center;
@@ -337,6 +410,7 @@ a.button {
 }
 
 .reader-counter {
+
     min-width: 60px;
 
     text-align: right;
@@ -348,9 +422,13 @@ a.button {
     font-weight: 600;
 }
 
-/* ОБЛАСТЬ СТРАНИЦЫ */
+
+/* =========================
+   ОБЛАСТЬ СТРАНИЦЫ
+========================= */
 
 .reader-content {
+
     flex: 1;
 
     min-height: 0;
@@ -370,9 +448,13 @@ a.button {
     background: #050309;
 }
 
-/* САМА СТРАНИЦА */
+
+/* =========================
+   ИЗОБРАЖЕНИЕ
+========================= */
 
 #readerImage {
+
     display: block;
 
     width: 100%;
@@ -382,13 +464,15 @@ a.button {
     height: auto;
 
     margin: 0 auto;
-
-    object-fit: contain;
 }
 
-/* НИЖНИЕ КНОПКИ */
+
+/* =========================
+   КНОПКИ РИДЕРА
+========================= */
 
 .reader-controls {
+
     flex-shrink: 0;
 
     display: flex;
@@ -401,7 +485,8 @@ a.button {
         calc(10px + env(safe-area-inset-bottom))
         14px;
 
-    background: rgba(15, 9, 23, .98);
+    background:
+        rgba(15, 9, 23, .98);
 
     border-top:
         1px solid
@@ -409,6 +494,7 @@ a.button {
 }
 
 .reader-controls button {
+
     flex: 1;
 
     height: 52px;
@@ -434,11 +520,14 @@ a.button {
 }
 
 .reader-controls button:disabled {
+
     opacity: .4;
 }
 
 
-/* МОБИЛЬНАЯ ВЕРСИЯ */
+/* =========================
+   МОБИЛЬНАЯ ВЕРСИЯ
+========================= */
 
 @media (max-width: 500px) {
 
@@ -467,10 +556,6 @@ a.button {
         font-size: 17px;
     }
 
-    .reader-header {
-        height: 64px;
-    }
-
     .reader-title {
         font-size: 14px;
     }
@@ -483,207 +568,239 @@ a.button {
 }
 
 </style>
+
 </head>
 
 
 <body>
 
+
 <main class="wrap">
 
+
+<!-- =========================
+     ГЛАВНАЯ
+========================= -->
+
+<section id="home" class="hero">
+
+    <img
+        src="efil-team.jpg"
+        alt="EFIL TEAM"
+    >
+
+    <div class="content">
+
+        <h1>EFIL TEAM</h1>
+
+        <p class="sub">
+            Переводы манги, манхвы и вебтунов
+        </p>
+
+        <div class="buttons">
+
+            <button
+                onclick="showSection('catalog')">
+
+                📚 Каталог
+
+            </button>
+
+
+            <button
+                onclick="showSection('latest')">
+
+                ✨ Последние главы
+
+            </button>
+
+
+            <button
+                onclick="tgLink('https://t.me/Efil_Team')">
+
+                💜 Наш Telegram
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     КАТАЛОГ
+========================= -->
+
+<section
+    id="catalog"
+    class="section hidden">
+
+    <h2>
+        📚 Каталог тайтлов
+    </h2>
+
+
     <!-- =========================
-         ГЛАВНАЯ
+         ВОР И СТЕКЛЯННАЯ ПРИНЦЕССА
     ========================== -->
 
-    <section id="home" class="hero">
+    <div class="title-card">
+
+        <img
+            src="vor-i-steklyannaya-princessa.jpg"
+            alt="Вор и стеклянная принцесса"
+        >
+
+        <div class="title-info">
+
+            <h3>
+                Вор и стеклянная принцесса
+            </h3>
+
+            <p>
+                Манга · Завершено
+            </p>
+
+            <button
+                onclick="openGlassReader()">
+
+                Читать
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         ЛАКТЕЯ
+    ========================== -->
+
+    <div class="title-card">
+
+        <img
+            src="Roctea.JPG"
+            alt="Лактея"
+        >
+
+        <div class="title-info">
+
+            <h3>
+                Лактея
+            </h3>
+
+            <p>
+                Манхва · Глава 3
+            </p>
+
+            <button
+                onclick="openRockteaReader()">
+
+                Читать
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         ТРЕТИЙ ТАЙТЛ
+    ========================== -->
+
+    <div class="title-card">
 
         <img
             src="efil-team.jpg"
-            alt="EFIL TEAM"
+            alt="Название третьего тайтла"
         >
 
-        <div class="content">
+        <div class="title-info">
 
-            <h1>EFIL TEAM</h1>
+            <h3>
+                Название третьего тайтла
+            </h3>
 
-            <p class="sub">
-                Переводы манги, манхвы и вебтунов
+            <p>
+                Вебтун · В процессе
             </p>
 
-            <div class="buttons">
+            <button
+                onclick="showComingSoon()">
 
-                <button
-                    onclick="showSection('catalog')">
-                    📚 Каталог
-                </button>
+                Читать
 
-                <button
-                    onclick="showSection('latest')">
-                    ✨ Последние главы
-                </button>
-
-                <button
-                    onclick="tgLink('https://t.me/Efil_Team')">
-                    💜 Наш Telegram
-                </button>
-
-            </div>
+            </button>
 
         </div>
-
-    </section>
-
-
-    <!-- =========================
-         КАТАЛОГ
-    ========================== -->
-
-    <section
-        id="catalog"
-        class="section hidden">
-
-        <h2>📚 Каталог тайтлов</h2>
-
-
-        <!-- ВОР И СТЕКЛЯННАЯ ПРИНЦЕССА -->
-
-        <div class="title-card">
-
-            <img
-                src="vor-i-steklyannaya-princessa.jpg"
-                alt="Вор и стеклянная принцесса"
-            >
-
-            <div class="title-info">
-
-                <h3>
-                    Вор и стеклянная принцесса
-                </h3>
-
-                <p>
-                    Манга · Завершено
-                </p>
-
-                <button
-                    onclick="openGlassReader()">
-                    Читать
-                </button>
-
-            </div>
-
-        </div>
-
-
-     <!-- ВТОРОЙ ТАЙТЛ — Лактея -->
-
-<div class="title-card">
-
-    <img
-        src="Roctea.JPG"
-        alt="Лактея"
-    >
-
-    <div class="title-info">
-
-        <h3>Лактея</h3>
-
-        <p>
-            Манхва · Глава 3
-        </p>
-
-        <button onclick="openRockteaReader()">
-            Читать
-        </button>
 
     </div>
+
+
+    <button
+        class="back-button"
+        onclick="showSection('home')">
+
+        ← Назад
+
+    </button>
+
+</section>
+
+
+<!-- =========================
+     ПОСЛЕДНИЕ ГЛАВЫ
+========================= -->
+
+<section
+    id="latest"
+    class="section hidden">
+
+    <h2>
+        ✨ Последние главы
+    </h2>
+
+    <div class="info">
+
+        Здесь будут отображаться последние
+        опубликованные главы ваших тайтлов.
+
+    </div>
+
+    <button
+        class="back-button"
+        onclick="showSection('home')">
+
+        ← Назад
+
+    </button>
+
+</section>
+
+
+<div class="footer">
+
+    EFIL TEAM · Mini App
 
 </div>
 
-        <!-- ТРЕТИЙ ТАЙТЛ -->
-
-        <div class="title-card">
-
-            <img
-                src="efil-team.jpg"
-                alt="Название третьего тайтла"
-            >
-
-            <div class="title-info">
-
-                <h3>
-                    Название третьего тайтла
-                </h3>
-
-                <p>
-                    Вебтун · В процессе
-                </p>
-
-                <button
-                    onclick="showComingSoon()">
-                    Читать
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <button
-            class="back-button"
-            onclick="showSection('home')">
-
-            ← Назад
-
-        </button>
-
-    </section>
-
-
-    <!-- =========================
-         ПОСЛЕДНИЕ ГЛАВЫ
-    ========================== -->
-
-    <section
-        id="latest"
-        class="section hidden">
-
-        <h2>
-            ✨ Последние главы
-        </h2>
-
-        <div class="info">
-
-            Здесь будут отображаться последние
-            опубликованные главы ваших тайтлов.
-
-        </div>
-
-        <button
-            class="back-button"
-            onclick="showSection('home')">
-
-            ← Назад
-
-        </button>
-
-    </section>
-
-
-    <div class="footer">
-
-        EFIL TEAM · Mini App
-
-    </div>
 
 </main>
 
 
 <!-- =========================
-     ЧИТАЛКА
-========================== -->
+     ЕДИНЫЙ РИДЕР
+========================= -->
 
 <div id="reader">
 
+
     <div class="reader-header">
+
 
         <button
             class="reader-close"
@@ -698,7 +815,7 @@ a.button {
             id="readerTitle"
             class="reader-title">
 
-            Вор и стеклянная принцесса
+            Лактея
 
         </div>
 
@@ -707,9 +824,10 @@ a.button {
             id="pageNumber"
             class="reader-counter">
 
-            1 / 20
+            1 / 1
 
         </div>
+
 
     </div>
 
@@ -718,16 +836,19 @@ a.button {
         id="readerContent"
         class="reader-content">
 
+
         <img
             id="readerImage"
             src=""
             alt="Страница"
         >
 
+
     </div>
 
 
     <div class="reader-controls">
+
 
         <button
             id="previousButton"
@@ -746,7 +867,9 @@ a.button {
 
         </button>
 
+
     </div>
+
 
 </div>
 
@@ -770,7 +893,7 @@ if (tg) {
 
 
 /* =========================
-   РАЗДЕЛЫ
+   ПЕРЕКЛЮЧЕНИЕ РАЗДЕЛОВ
 ========================= */
 
 function showSection(id) {
@@ -803,8 +926,8 @@ function showSection(id) {
 
 
 /* =========================
+   ВОР И СТЕКЛЯННАЯ ПРИНЦЕССА
    20 СТРАНИЦ
-   ИМЕНА ТОЧНО КАК НА GITHUB
 ========================= */
 
 const glassPages = [
@@ -834,19 +957,83 @@ const glassPages = [
 
 
 /* =========================
-   ТЕКУЩАЯ СТРАНИЦА
+   ЛАКТЕЯ
+   ГЛАВА 3
+   12 СТРАНИЦ
 ========================= */
 
-let currentPage = 0;
+const rockteaPages = [
+
+    "1.JPG",
+    "2.JPG",
+    "3.JPG",
+    "4.JPG",
+    "5.JPG",
+    "6.JPG",
+    "7.JPG",
+    "8.JPG",
+    "9.JPG",
+    "10.JPG",
+    "11.JPG",
+    "12.JPG"
+
+];
 
 
 /* =========================
-   ОТКРЫТЬ ГЛАВУ
+   СОСТОЯНИЕ РИДЕРА
+========================= */
+
+let currentPages = [];
+
+let currentPage = 0;
+
+let currentTitle = "";
+
+
+/* =========================
+   ОТКРЫТЬ ВОРА
 ========================= */
 
 function openGlassReader() {
 
+    currentPages =
+        glassPages;
+
     currentPage = 0;
+
+    currentTitle =
+        "Вор и стеклянная принцесса";
+
+    openReader();
+
+}
+
+
+/* =========================
+   ОТКРЫТЬ ЛАКТЕЮ
+========================= */
+
+function openRockteaReader() {
+
+    currentPages =
+        rockteaPages;
+
+    currentPage = 0;
+
+    currentTitle =
+        "Лактея · Глава 3";
+
+    openReader();
+
+}
+
+
+/* =========================
+   ОБЩИЙ РИДЕР
+========================= */
+
+function openReader() {
 
     const reader =
         document.getElementById("reader");
@@ -854,7 +1041,9 @@ function openGlassReader() {
 
     reader.classList.add("active");
 
-    document.body.style.overflow = "hidden";
+
+    document.body.style.overflow =
+        "hidden";
 
 
     showPage();
@@ -863,7 +1052,7 @@ function openGlassReader() {
 
 
 /* =========================
-   ЗАКРЫТЬ ГЛАВУ
+   ЗАКРЫТЬ
 ========================= */
 
 function closeReader() {
@@ -874,7 +1063,16 @@ function closeReader() {
 
     reader.classList.remove("active");
 
-    document.body.style.overflow = "";
+
+    document.body.style.overflow =
+        "";
+
+
+    const image =
+        document.getElementById("readerImage");
+
+
+    image.src = "";
 
 }
 
@@ -885,32 +1083,49 @@ function closeReader() {
 
 function showPage() {
 
+    if (!currentPages.length) {
+        return;
+    }
+
+
     const image =
         document.getElementById("readerImage");
+
 
     const counter =
         document.getElementById("pageNumber");
 
+
+    const title =
+        document.getElementById("readerTitle");
+
+
     const previous =
         document.getElementById("previousButton");
+
 
     const next =
         document.getElementById("nextButton");
 
 
     image.src =
-        glassPages[currentPage];
+        currentPages[currentPage];
 
 
     image.alt =
-        "Вор и стеклянная принцесса — страница " +
+        currentTitle +
+        " — страница " +
         (currentPage + 1);
+
+
+    title.textContent =
+        currentTitle;
 
 
     counter.textContent =
         (currentPage + 1) +
         " / " +
-        glassPages.length;
+        currentPages.length;
 
 
     previous.disabled =
@@ -918,7 +1133,8 @@ function showPage() {
 
 
     next.disabled =
-        currentPage === glassPages.length - 1;
+        currentPage ===
+        currentPages.length - 1;
 
 
     document
@@ -929,14 +1145,14 @@ function showPage() {
 
 
 /* =========================
-   СЛЕДУЮЩАЯ
+   ВПЕРЁД
 ========================= */
 
 function nextPage() {
 
     if (
         currentPage <
-        glassPages.length - 1
+        currentPages.length - 1
     ) {
 
         currentPage++;
@@ -949,12 +1165,14 @@ function nextPage() {
 
 
 /* =========================
-   ПРЕДЫДУЩАЯ
+   НАЗАД
 ========================= */
 
 function previousPage() {
 
-    if (currentPage > 0) {
+    if (
+        currentPage > 0
+    ) {
 
         currentPage--;
 
@@ -966,10 +1184,11 @@ function previousPage() {
 
 
 /* =========================
-   СВАЙПЫ
+   СВАЙП
 ========================= */
 
 let touchStartX = 0;
+
 let touchStartY = 0;
 
 
@@ -981,8 +1200,14 @@ reader.addEventListener(
     "touchstart",
     function(e) {
 
+        if (!reader.classList.contains("active")) {
+            return;
+        }
+
+
         touchStartX =
             e.changedTouches[0].screenX;
+
 
         touchStartY =
             e.changedTouches[0].screenY;
@@ -996,24 +1221,28 @@ reader.addEventListener(
     "touchend",
     function(e) {
 
+        if (!reader.classList.contains("active")) {
+            return;
+        }
+
+
         const touchEndX =
             e.changedTouches[0].screenX;
+
 
         const touchEndY =
             e.changedTouches[0].screenY;
 
 
         const differenceX =
-            touchStartX - touchEndX;
+            touchStartX -
+            touchEndX;
+
 
         const differenceY =
-            touchStartY - touchEndY;
+            touchStartY -
+            touchEndY;
 
-
-        /*
-         * Если движение больше вертикально,
-         * чем горизонтально — ничего не делаем.
-         */
 
         if (
             Math.abs(differenceX) <
@@ -1055,13 +1284,17 @@ reader.addEventListener(
 
 function tgLink(url) {
 
-    if (tg?.openTelegramLink) {
+    if (
+        tg &&
+        tg.openTelegramLink
+    ) {
 
         tg.openTelegramLink(url);
 
     } else {
 
-        window.location.href = url;
+        window.location.href =
+            url;
 
     }
 
@@ -1081,82 +1314,8 @@ function showComingSoon() {
 }
 
 </script>
-<script>
 
-const rockteaPages = [
-    "1.JPG",
-    "2.JPG",
-    "3.JPG",
-    "4.JPG",
-    "5.JPG",
-    "6.JPG",
-    "7.JPG",
-    "8.JPG",
-    "9.JPG",
-    "10.JPG",
-    "11.JPG",
-    "12.JPG"
-];
 
-let rockteaPage = 0;
-
-function openRockteaReader() {
-
-    rockteaPage = 0;
-
-    const reader = document.getElementById("reader");
-
-    reader.style.display = "flex";
-
-    document.getElementById("readerTitle").textContent =
-        "Rocktea · Глава 3";
-
-    showRockteaPage();
-
-    document.body.style.overflow = "hidden";
-}
-
-function showRockteaPage() {
-
-    const image = document.getElementById("readerImage");
-    const number = document.getElementById("pageNumber");
-
-    image.src = rockteaPages[rockteaPage];
-
-    image.alt =
-        "Rocktea — глава 3 — страница " +
-        (rockteaPage + 1);
-
-    number.textContent =
-        (rockteaPage + 1) +
-        " / " +
-        rockteaPages.length;
-}
-
-function nextRockteaPage() {
-
-    if (rockteaPage < rockteaPages.length - 1) {
-
-        rockteaPage++;
-
-        showRockteaPage();
-
-        document.querySelector(".reader-content").scrollTop = 0;
-    }
-}
-
-function previousRockteaPage() {
-
-    if (rockteaPage > 0) {
-
-        rockteaPage--;
-
-        showRockteaPage();
-
-        document.querySelector(".reader-content").scrollTop = 0;
-    }
-}
-
-</script>
 </body>
+
 </html>
