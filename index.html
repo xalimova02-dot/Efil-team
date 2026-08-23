@@ -275,7 +275,7 @@ header h1 {
          onclick="openTitle('happy')">
 
         <img
-            src="Final.jpg"
+            src="Final.JPG"
             onerror="this.onerror=null; this.src='Final_92_1.jpg';"
             alt="Счастливый финал для умирающей злодейки">
 
@@ -319,7 +319,7 @@ header h1 {
 
         <img
             id="titleCover"
-            src="Final.jpg"
+            src="Final.JPG"
             onerror="this.onerror=null; this.src='Final_92_1.jpg';"
             alt="Обложка">
 
@@ -397,12 +397,12 @@ const titles = {
 
         /*
          * Обложка.
-         * Сначала пытаемся загрузить Final.jpg.
-         * Если её нет — Final.png.
+         * Сначала пытаемся загрузить Final.JPG.
+         * Если её нет — Final.JPG.
          * Если и её нет — первая страница главы 92.
          */
 
-        cover: "Final.jpg",
+        cover: "Final.JPG",
 
         donation: {
             bank: "Т-Банк",
@@ -537,8 +537,8 @@ function openTitle(id) {
 
     /*
      * Обложка.
-     * Если Final.jpg отсутствует,
-     * пробуем Final.png,
+     * Если Final.JPG отсутствует,
+     * пробуем Final.JPG,
      * затем первую страницу 92 главы.
      */
 
@@ -554,7 +554,7 @@ function openTitle(id) {
         }
 
         this.dataset.fallback = "1";
-        this.src = "Final.png";
+        this.src = "Final.JPG";
     };
 
     titleCover.dataset.fallback = "0";
